@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+
+.line{
+	height: 6px;
+	width: 30%;
+	background:#ff5d07;
+	display: inline-block;
+}
+
+.btn-outline-success {
+	
+	border-radius:20px;
+	border:2px solid #ff5d07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ff5d07;
+	font-family:Arial;
+	font-size:15px;
+	padding:5px 15px;
+	text-decoration:none;
+	
+}
+.btn-outline-success:hover {
+	color: rgb(255, 255, 255);
+	box-shadow: 0 8px 18px rgb(226, 106, 0);
+    ;
+}
+.btn-outline-success:active {
+	position:relative;
+	top:1px;
+}
+
+.btn-outline-secondary {
+	background-color: #ff5d07;
+	border-radius:20px;
+	border:2px solid #ff5d07;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:Arial;
+	font-size:15px;
+	padding:5px 15px;
+	text-decoration:none;
+	
+}
+.btn-outline-secondary:hover {
+	color: rgb(255, 255, 255);
+	box-shadow: 0 8px 18px rgb(226, 106, 0);
+}
+.btn-outline-secondary:active {
+	position:relative;
+	top:1px;
+}
+
+.btn-card {
+	
+	font-family: "Nunito";
+	font-weight: bold;
+	font-size: 17px;
+     background-color: #ff5d07;
+	border-color: #f25000;
+	border-radius: 28px;
+	border-width: 4px;
+	color: white;
+	margin:5;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.btn-card:hover {
+	background-color: #ff5d07;
+}
+
+
+.btn-card:active {
+	position:relative;
+	top:1px;
+}
+
+
+.btn-header {
+	
+	background-color: #ff5d07;
+	border-radius:42px;
+		border:1px solid #ff5d07;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:'Nunito';
+	font-size:20px;
+	padding:7px 76px;
+	text-decoration:none;
+
+
+	
+}
+.btn-header:hover {
+	color: rgb(255, 255, 255);
+	box-shadow: 0 8px 18px rgb(226, 106, 0);
+}
+
+.btn-header:active {
+	position:relative;
+	top:1px;
+}
+
+

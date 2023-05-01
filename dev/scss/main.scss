@@ -1,4 +1,14 @@
 @use './vendor/bootstrap/bootstrap.scss';
+@use './base/reset';
+@use './base/style';
+@use './base/typography';
+
+@use './components/components';
+
+@use './layout/footer';
+@use './layout/header';
+
+@use './utils/vars';
 
 body{
     padding: 0;
