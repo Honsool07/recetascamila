@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <link rel="stylesheet" href="./css/main.css">
+    <title>VueJS - Components</title>
+</head>
+<body>
+    <section id="app" class="container">
+        <recipe-category-button category="Lunch"></recipe-category-button>
+        <recipe-details :name="recipes[selectedIndex].name" :image="recipes[selectedIndex].image" :instructions="recipes[selectedIndex].instructions" :ingredients="recipes[selectedIndex].ingredients"></recipe-details>
+
+        <section class="row">
+            <div v-for="(item, index) in recipes" class="col-md-3">
+                <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :level="item.level" :likes="item.likes" :index="index" v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+            </div>
+        </section>
+        
+    </section>
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- main script -->
+    <script src="./js/component.js"></script>
+
+    <script src="./js/components/RecipeCard.js"></script>
+    <script src="./js/components/RecipeCategoryButton.js"></script>
+    <script src="./js/components/RecipeDetails.js"></script>
+
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
+
+</body>
+</html>

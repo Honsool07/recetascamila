@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <section class="container-fluid">
+    <section id="app" class="container-fluid">
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -154,8 +154,8 @@
                 <img class="img-fluid rounded" src="./imgs/headerpic.png" alt="header">
 
                 <div class="position-absolute top-50 start-50 translate-middle">
-                    <h1>Min eats Recipes</h1>
-                    <p>Te amo</p>
+                    <h1>{{ title }}</h1>
+                    <p>{{ description }}</p>
                 </div>
             </header>
         </section>
@@ -163,7 +163,7 @@
 
 
 
-        <section id="app" class="container">
+        <section class="container">
             <h2 class="text-center subtitle">Thanks for visiting KookBook recipes!!<h2>
                     <p class="text-center text ">The KookBook is here to help you cook delicious meals with less stress
                         and
@@ -179,115 +179,73 @@
         <section class="container">
 
 
-            <div class="sec-title text-left  ">
+            <div class="sec-title text-left">
 
                 <h2 class="mt-5">10 recetas mas votadas </h2>
 
             </div>
-            <div class="row row-cols-2 row-cols-lg-5 g-2 g-l g-1">
+            <div class="container">
+                <div class="row">
+                    <div v-for="(item, index) in recipes" class="col-md-3 ">
+                        <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                            <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
+                            <div class="card-body p-0">
+                                <p class="mt-2">{{ item.category }}</p>
+                                <h5 class="card-title">{{ item.name }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                                <p>{{ item.time }}</p>
+                                <p>{{ item.level }}</p>
+                                <p>{{ item.likes }}</p>
+                                <button class="btn btn-danger">Like</button>
+                                <button class="btn btn-success">Unlike</button>
+                                <button class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">Ver
+                                    Receta</button>
 
-                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
-                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
-                    <div class="card-body p-0">
-                        <h5 class='card-title'>Sanguchito</h5>
-                        <p class="card-text">Dedlicioso sanguchito de miga</p>
-                        <p>20 min</p>
-                        <p>Facil</p>
-                        <p>23</p>
-                        <button class="btn btn-danger">Like</button>
-                        <button class="btn btn-success">Unlike</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
-                            Receta</button>
 
-
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
-                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
-                    <div class="card-body p-0">
-                        <h5 class='card-title'>Sanguchito</h5>
-                        <p class="card-text">Dedlicioso sanguchito de miga</p>
-                        <p>20 min</p>
-                        <p>Facil</p>
-                        <p>23</p>
-                        <button class="btn btn-danger">Like</button>
-                        <button class="btn btn-success">Unlike</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
-                            Receta</button>
-
-
-                    </div>
-                </div>
-
-
-                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
-                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
-                    <div class="card-body p-0">
-                        <h5 class='card-title'>Sanguchito</h5>
-                        <p class="card-text">Dedlicioso sanguchito de miga</p>
-                        <p>20 min</p>
-                        <p>Facil</p>
-                        <p>23</p>
-                        <button class="btn btn-danger">Like</button>
-                        <button class="btn btn-success">Unlike</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
-                            Receta</button>
-
-
-                    </div>
-
-                </div>
-
-                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
-                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
-                    <div class="card-body p-0">
-                        <h5 class='card-title'>Sanguchito</h5>
-                        <p class="card-text">Dedlicioso sanguchito de miga</p>
-                        <p>20 min</p>
-                        <p>Facil</p>
-                        <p>23</p>
-                        <button class="btn btn-danger">Like</button>
-                        <button class="btn btn-success">Unlike</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
-                            Receta</button>
-
-
-                    </div>
-
-                </div>
-
-                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
-                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
-                    <div class="card-body p-0">
-                        <h5 class='card-title'>Sanguchito</h5>
-                        <p class="card-text">Dedlicioso sanguchito de miga</p>
-                        <p>20 min</p>
-                        <p>Facil</p>
-                        <p>23</p>
-                        <button class="btn btn-danger">Like</button>
-                        <button class="btn btn-success">Unlike</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
-                            Receta</button>
-
-
-                    </div>
-
-                </div>
-
-
-
-
-
             </div>
-
-
-
-            </div>
-            </div>
-
         </section>
         <!-- top 10 section ends -->
+
+  <!-- featured starts -->
+        <section class="container">
+
+
+            <div class="sec-title text-left">
+
+                <h2 class="mt-5">Recetas Destacadas</h2>
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div v-for="(item, index) in recipes" class="col-md-3 ">
+                        <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                            <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
+                            <div class="card-body p-0">
+                                <p class="mt-2">{{ item.category }}</p>
+                                <h5 class="card-title">{{ item.name }}</h5>
+                                <p class="card-text">{{ item.description }}</p>
+                                <p>{{ item.time }}</p>
+                                <p>{{ item.level }}</p>
+                                <p>{{ item.likes }}</p>
+                                <button class="btn btn-danger">Like</button>
+                                <button class="btn btn-success">Unlike</button>
+                                <button class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">Ver
+                                    Receta</button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured ends -->
 
     </section>
 
