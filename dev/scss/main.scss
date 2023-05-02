@@ -10,7 +10,21 @@
 
 @use './utils/vars';
 
-body{
-    padding: 0;
+
+h1{
+    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-lg,vars.$fw-regular,  vars.$clr-red);
+    width: 50%;
+    margin: 0;
+}
+.subtitle{
+    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold, vars.$clr-green);
+
 }
 
+.text{
+    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark); 
+}
+
+h2{
+    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold,vars.$clr-orange); 
+}

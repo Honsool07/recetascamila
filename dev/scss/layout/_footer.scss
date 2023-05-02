@@ -1,5 +1,4 @@
-
-
+@use 'utils/vars';
 .footer .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -20,7 +19,7 @@
 }
 
 .footer .box-container .box a:hover{
-    color:var(--green);
+    color:green;
     text-decoration: underline;
 }
 
@@ -28,12 +27,12 @@
     text-align: center;
     border-top: .1rem solid rgba(0,0,0,.1);
     font-size: 2rem;
-    color:var(--black);
+    color:black;
     padding:.5rem;
     padding-top: 1.5rem;
     margin-top: 1.5rem;
 }
 
 .footer .credit span{
-    color:var(--green);
+    color:green;
 }

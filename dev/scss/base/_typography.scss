@@ -1,7 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@1000&family=Poppins&display=swap');
+@use 'utils/vars';
 
+//set fonts for titles and sections
+@mixin set-font($ffamily, $fsize, $fweight, $fcolor:vars.$clr-dark){
+    font-family: $ffamily;
+    font-size: $fsize;
+    font-weight: $fweight;
+    color: $fcolor;
+}
+
+/*
 html{
     font-family: "Poppins";
 }

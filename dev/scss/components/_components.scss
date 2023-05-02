@@ -1,4 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@use 'utils/vars';
+
+@mixin btn ($shadow, $border, $bg, $color){
+
+    font-family: vars.$ff-sans-syne;
+    font-size: vars.$fs-xsm;
+    position: relative;
+    display:table-cell;
+    place-items: center;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5rem;
+    border:$border ;
+
+    @if($shadow){
+        box-shadow: .13rem .3rem 1rem vars.$clr-light;
+    }
+
+    background-color: $bg;
+    color:$color ;
+    
+    @include media-queries.respond-to (media-queries.$phone){
+    
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+    
+    }
+}
 
 
 .line{

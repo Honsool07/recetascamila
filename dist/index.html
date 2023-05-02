@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&family=Syne:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
     <!--Icon Line-->
     <script src="https://kit.fontawesome.com/f664eca71c.js" crossorigin="anonymous"></script>
@@ -23,202 +29,399 @@
 </head>
 
 <body>
-    <section  id="app" class="container"></section>
-    <div class="position-relative mt-4">
+    <section class="container-fluid">
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
+                            alt="{{ recipes[selectedIndex].name }}">
+                        <p class="text-center f-6">{{ recipes[selectedIndex].ingredients }}</p>
+                        <p class="fst-italic fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Prev</button>
+                        <button type="button" class="btn btn-secondary" v-on:click="onClickNext()">Next</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
 
-        <nav class="row justify-content-around navbar navbar-expand-lg ">
 
-            <div class="container-fluid col-8">
-                <a class="navbar-brand main-title col-2" href="index.html">
-                    <img src="./imgs/logo.png " alt="Logo" width="150" height="144">
-                
-                </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse justify-content-between " id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <section id="app" class="container">
 
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Categorías
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Almuerzo</a></li>
+            <div class="position-relative mt-4">
+
+                <nav class="row justify-content-around navbar navbar-white navbar-expand-lg ">
+
+                    <div class="container-fluid">
+                        <a class="navbar-brand main-title col-2" href="index.html">
+                            <img src="./imgs/logo.png " alt="Logo" width="150" height="144">
+
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-between " id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                                <li class="nav-item dropdown ">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Categorías
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Desayuno</a></li>
+                                        <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                                        <li><a class="dropdown-item" href="#">Almuerzos</a></li>
+                                        <li><a class="dropdown-item" href="#">Postres</a></li>
+                                        <li><a class="dropdown-item" href="#">Sopas</a></li>
+                                        <li><a class="dropdown-item" href="#">Entradas</a></li>
+                                        <li><a class="dropdown-item" href="#">Todas</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Ocasiones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Cumpleaños</a></li>
+                                        <li><a class="dropdown-item" href="#">Dia del Padre</a></li>
+                                        <li><a class="dropdown-item" href="#">Dia de la Madre</a></li>
+                                        <li><a class="dropdown-item" href="#">Dia del Niño</a></li>
+                                        <li><a class="dropdown-item" href="#">Navidad</a></li>
+                                        <li><a class="dropdown-item" href="#">Verano</a></li>
+                                        <li><a class="dropdown-item" href="#">Todas</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Dificultades
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Facil</a></li>
+                                        <li><a class="dropdown-item" href="#">Intermedio</a></li>
+                                        <li><a class="dropdown-item" href="#">Dicil</a></li>
+                                        <li><a class="dropdown-item" href="#">Todas</a></li>
+
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Ocasiones
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Semana Santa</a></li>
+                            <ul class="navbar-nav ms-auto">
+                                <form class="me-2">
+                                    <a href="login.php" class="btn btn-outline-success me-2">Iniciar Sesión</a>
+                                    <a href="login.php" class="btn btn-sm btn-outline-secondary">Registrarse</a>
+
+                                </form>
+
+                                <li class="list-inline-item ">
+                                    <a href="#"><i class="fa-solid fa-magnifying-glass  m-2 "></i></a>
+                                    <a href="#"><i class="fa-solid fa-user m-2"></i></a>
+                                </li>
                             </ul>
-                        </li>
+                        </div>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dificultades
+                    </div>
+                </nav>
+            </div>
+
+        </section>
+
+        <!--Navbar ends-->
+
+        <!--Header starts-->
+        <section class="container-fluid">
+            <header class="position-relative mt-4">
+                <img class="img-fluid rounded" src="./imgs/headerpic.png" alt="header">
+
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <h1>Min eats Recipes</h1>
+                    <p>Te amo</p>
+                </div>
+            </header>
+        </section>
+        <!--Header ends-->
+
+
+
+        <section id="app" class="container">
+            <h2 class="text-center subtitle">Thanks for visiting KookBook recipes!!<h2>
+                    <p class="text-center text ">The KookBook is here to help you cook delicious meals with less stress
+                        and
+                        more joy. We offer recipes and cooking advice for home cooks, by home cooks. Helping create
+                        “kitchen wins” is what we're all about.Our recipes primarily use fresh, unprocessed
+                        ingredients
+                        but we also believe there is a time and a place for canned, frozen, and other prepared
+                        ingredients.
+                    </p>
+        </section>
+
+        <!-- top 10 section starts  -->
+        <section class="container">
+
+
+            <div class="sec-title text-left  ">
+
+                <h2 class="mt-5">10 recetas mas votadas </h2>
+
+            </div>
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-l g-1">
+
+                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
+                    <div class="card-body p-0">
+                        <h5 class='card-title'>Sanguchito</h5>
+                        <p class="card-text">Dedlicioso sanguchito de miga</p>
+                        <p>20 min</p>
+                        <p>Facil</p>
+                        <p>23</p>
+                        <button class="btn btn-danger">Like</button>
+                        <button class="btn btn-success">Unlike</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
+                            Receta</button>
+
+
+                    </div>
+                </div>
+
+                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
+                    <div class="card-body p-0">
+                        <h5 class='card-title'>Sanguchito</h5>
+                        <p class="card-text">Dedlicioso sanguchito de miga</p>
+                        <p>20 min</p>
+                        <p>Facil</p>
+                        <p>23</p>
+                        <button class="btn btn-danger">Like</button>
+                        <button class="btn btn-success">Unlike</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
+                            Receta</button>
+
+
+                    </div>
+                </div>
+
+
+                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
+                    <div class="card-body p-0">
+                        <h5 class='card-title'>Sanguchito</h5>
+                        <p class="card-text">Dedlicioso sanguchito de miga</p>
+                        <p>20 min</p>
+                        <p>Facil</p>
+                        <p>23</p>
+                        <button class="btn btn-danger">Like</button>
+                        <button class="btn btn-success">Unlike</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
+                            Receta</button>
+
+
+                    </div>
+
+                </div>
+
+                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
+                    <div class="card-body p-0">
+                        <h5 class='card-title'>Sanguchito</h5>
+                        <p class="card-text">Dedlicioso sanguchito de miga</p>
+                        <p>20 min</p>
+                        <p>Facil</p>
+                        <p>23</p>
+                        <button class="btn btn-danger">Like</button>
+                        <button class="btn btn-success">Unlike</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
+                            Receta</button>
+
+
+                    </div>
+
+                </div>
+
+                <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                    <img src="./imgs/recipes/sanguchito.jpg" class="card-img rounded float-start" alt="featured recipe">
+                    <div class="card-body p-0">
+                        <h5 class='card-title'>Sanguchito</h5>
+                        <p class="card-text">Dedlicioso sanguchito de miga</p>
+                        <p>20 min</p>
+                        <p>Facil</p>
+                        <p>23</p>
+                        <button class="btn btn-danger">Like</button>
+                        <button class="btn btn-success">Unlike</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ver
+                            Receta</button>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+            </div>
+            </div>
+
+        </section>
+        <!-- top 10 section ends -->
+
+    </section>
+
+
+
+
+    <!--Footer starts-->
+    <section class="container-fluid">
+        <footer class="bg-dark text-white pt-5 pb-4">
+
+            <div class="container text-left text-md-left">
+                <div class="row text-left text-md-left">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h5 class=" mb-4 font weight-bold text-warning main-title">Kook Book</h5>
+                        <p class="md-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores modi
+                            maxime
+                            ullam perferendis! Quidem deserunt eaque, vero eligendi </p>
+
+                    </div>
+                    <div class="col-mmd-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning">Categorias</h5>
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration:none  ;"> Almuerzo</a>
+                        </p>
+
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration:none ;"> Desayuno</a>
+                        </p>
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration:none ;"> Postres</a>
+                        </p>
+
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration:none ;"> BTS</a>
+                        </p>
+
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning"> Links</h5>
+
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration:none ;"> Tu Cuenta</a>
+                        </p>
+
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration:none ;"> Registrarse</a>
+                        </p>
+                        <p>
+                            <a href="#" class="text-white" style="text-decoration:none ;"> Todas las Recetas</a>
+                        </p>
+
+                        <p>
+                            <a href="https://www.youtube.com/watch?v=gduuajhODOU" class="text-white"
+                                style="text-decoration:none ;"> BTS</a>
+                        </p>
+
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+
+                        <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+                        <p>
+                            <i class="fas fa-home mr-3"></i> Esparza, EP 0613, CR
+
+                        </p>
+
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> kookie@gmail.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> +07 144340
+                        </p>
+
+                        <p>
+                            <i class="fas fa-print mr-3"></i> +13 06132013
+                        </p>
+                    </div>
+
+                </div>
+
+                <hr class="mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-7 col-lg-8">
+                        <p>Copyright ©2022 All rights reserved by:
+                            <a href="#" style="text-decoration:none">
+                                <strong class="text-warning">Kook Book</strong>
+
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Facil</a></li>
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="text-center text-md-right">
+                            <ul class=" list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class=" txt-footer2 btn-floating btn-sm text-white"><i
+                                            class="fab fa-facebook fa-sm"></i></a>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <a href="#" class=" txt-footer2 btn-floating btn-sm text-white"><i
+                                            class="fab fa-twitter fa-sm"></i></a>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <a href="#" class=" txt-footer2 btn-floating btn-sm text-white"><i
+                                            class="fab fa-google-plus fa-sm"></i></a>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <a href="#" class="txt-footer2 btn-floating btn-sm text-white"><i
+                                            class="fab fa-linkedin fa-sm"></i></a>
+                                </li>
+
+                                <li class="list-inline-item">
+                                    <a href="#" class="txt-footer2 btn-floating btn-sm text-white"><i
+                                            class="fab fa-youtube fa-sm"></i></a>
+                                </li>
+
+
+
 
                             </ul>
-                        </li>
-                    </ul>
 
-                    <ul class="navbar-nav ms-auto">
-
-                        <li class="list-inline-item ">
-                            <a href="#"><i class="fa-solid fa-magnifying-glass  m-2 "></i></a>
-                            <a href="#"><i class="fa-solid fa-user m-2"></i></a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        </nav>
-    </div>
-
-</section>
-
-    <!--Navbar ends-->
-
-    <header class=" position-relative mt-4">
-        <img class="col-12 img-fluid rounded"src="./imgs/headerpic.png" alt="header">
-        
-        <div class="position-absolute top-50 start-50 translate-middle">
-            <h1>Min eats Recipes</h1>
-            <p>Te amo</p>
-        </div>
-    </header>
 
 
-<!--Footer starts-->
+        </footer>
 
-<footer class="bg-dark text-white pt-5 pb-4">
- 
-    <div class="container text-left text-md-left">
-       <div class="row text-left text-md-left">
-         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h5 class=" mb-4 font weight-bold text-warning main-title" >Kook Book</h5>
-              <p class="md-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores modi maxime ullam perferendis! Quidem deserunt eaque, vero eligendi </p>
-  
-         </div>
-         <div class="col-mmd-2 col-lg-2 col-xl-2 mx-auto mt-3" >
-                 <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning">Categorias</h5>
-                 <p>
-                  <a href="#" class="text-white" style="text-decoration:none  ;"> Almuerzo</a>
-                 </p>
-  
-                 <p>
-                  <a href="#" class="text-white" style="text-decoration:none ;"> Desayuno</a>
-                 </p>
-                 <p>
-                  <a href="#" class="text-white" style="text-decoration:none ;"> Postres</a>
-                 </p>
-  
-                 <p>
-                  <a href="#" class="text-white" style="text-decoration:none ;"> BTS</a>
-                 </p>
-  
-         </div>
-             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">  
-               <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning"> Links</h5>
-               
-               <p>
-                <a href="#" class="text-white" style="text-decoration:none ;"> Tu Cuenta</a>
-               </p>
-  
-               <p>
-                <a href="#" class="text-white" style="text-decoration:none ;"> Registrarse</a>
-               </p>
-               <p>
-                <a href="#" class="text-white" style="text-decoration:none ;"> Todas las Recetas</a>
-               </p>
-  
-               <p>
-                <a href="https://www.youtube.com/watch?v=gduuajhODOU" class="text-white" style="text-decoration:none ;"> BTS</a>
-               </p>
-  
-             </div >    
-             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                   
-              <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
-              <p>
-                <i class="fas fa-home mr-3"></i> Esparza, EP 0613, CR
-  
-              </p>
-  
-              <p>
-                <i class="fas fa-envelope mr-3"></i> kookie@gmail.com
-              </p>
-              <p>
-                <i class="fas fa-phone mr-3"></i> +07 144340
-              </p>
-  
-              <p>
-                <i class="fas fa-print mr-3"></i> +13 06132013
-              </p>
-             </div>      
-  
-           </div>
-  
-             <hr class="mb-4">
-             <div class="row align-items-center">
-               <div class="col-md-7 col-lg-8">
-                  <p>Copyright ©2022 All rights reserved by:
-                     <a href="#" style="text-decoration:none">
-                        <strong class="text-warning">Kook Book</strong>
-  
-                    </a></p>
-               </div>
-               <div class="col-md-5 col-lg-4">
-                        <div class="text-center text-md-right">
-                            <ul  class=" list-unstyled list-inline">
-                              <li class="list-inline-item">
-                                <a href="#" class=" txt-footer2 btn-floating btn-sm text-white" ><i class="fab fa-facebook fa-sm" ></i></a>
-                              </li>
-                                  
-                              <li class="list-inline-item">
-                                <a href="#" class=" txt-footer2 btn-floating btn-sm text-white" ><i class="fab fa-twitter fa-sm" ></i></a>
-                              </li>
-  
-                              <li class="list-inline-item">
-                                <a href="#" class=" txt-footer2 btn-floating btn-sm text-white"><i class="fab fa-google-plus fa-sm" ></i></a>
-                              </li>
-  
-                              <li class="list-inline-item">
-                                <a href="#" class="txt-footer2 btn-floating btn-sm text-white" ><i class="fab fa-linkedin fa-sm" ></i></a>
-                              </li>
-  
-                              <li class="list-inline-item">
-                                <a href="#" class="txt-footer2 btn-floating btn-sm text-white" ><i class="fab fa-youtube fa-sm" ></i></a>
-                              </li>
-  
-  
-  
-  
-                            </ul>
-                           
-                        </div>
-               </div>
-            </div>
-  
-    </div>
-  
-  
-  </footer>
-  
-  <!--Footer ends-->
+        <!--Footer ends-->
+    </section>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -232,6 +435,7 @@
     <script>
         const mountedApp = app.mount("#app");
     </script>
+
 </body>
 
 </html>
