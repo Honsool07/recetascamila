@@ -128,8 +128,8 @@
 
                             <ul class="navbar-nav ms-auto">
                                 <form class="me-2">
-                                    <a href="login.php" class="btn btn-outline-success me-2">Iniciar Sesión</a>
-                                    <a href="login.php" class="btn btn-sm btn-outline-secondary">Registrarse</a>
+                                    <a href="login.html" class="btn btn-outline-success me-2">Iniciar Sesión</a>
+                                    <a href="signUp.html" class="btn btn-sm btn-outline-secondary">Registrarse</a>
 
                                 </form>
 
@@ -188,7 +188,7 @@
 
                 <div class="sec-title text-left">
 
-                    <h2 class="mt-5">Top 10 recetas</h2>
+                    <h2 >Top 10 recetas</h2>
 
                 </div>
 
@@ -197,11 +197,11 @@
 
 
                 <div class="container">
-                    <div class="row">
+                    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
 
 
                         <div v-for="(item, index) in recipes" class="col-md-3">
-                            <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                            <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
                                 <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
                                 <div class="card-body p-0">
                                     <p class="mt-2 ms-2 badge bg-dark">{{ item.category }}</p>

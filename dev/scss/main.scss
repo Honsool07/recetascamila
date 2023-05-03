@@ -12,6 +12,8 @@
 @use './utils/vars';
 @use './media-queries';
 
+@use './pages/login';
+
 
 h1{
     @include typography.set-font(vars.$ff-sans-syne, vars.$fs-lg,vars.$fw-regular,  vars.$clr-red);
@@ -22,6 +24,34 @@ h1{
 .subtitle{
     @include typography.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold, vars.$clr-green);
 
+}
+
+.sub-login{
+    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark);
+    
+        text-align: center;
+        line-height: 25px;
+        margin-top: 30px;
+      
+}
+
+.welcome{
+    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-xmed, vars.$fw-bold, vars.$clr-dark);
+    
+        text-align: center;
+        line-height: 3rem;
+        margin-top: 75px;
+      
+}
+
+.txt-login{
+    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark);
+    
+        text-align: center;
+        line-height: 25px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      
 }
 
 .text{
@@ -77,14 +107,28 @@ h2{
     @include typography.set-font(vars.$ff-sans-inter, vars.$fs-xxsm, vars.$fw-bold,vars.$clr-green); 
 }
 
+.account-txt{
+    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-data, vars.$fw-regular, vars.$clr-dark); 
+    margin: 20px;
+    
+}
+
+
 //botones
 
 .like-btn{
     @include components.btn(false, vars.$clr-green, vars.$clr-green, vars.$clr-white );
     font-size:15px;
     margin: 0.3rem;
+    @include media-queries.respond-to (media-queries.$phone){
+    
+       margin-bottom: 5px;
+        
+        
+        }
     
 }
+
 
 .unlike-btn{
     @include components.btn(false, vars.$clr-red, vars.$clr-red, vars.$clr-white);
@@ -96,5 +140,14 @@ h2{
     @include components.btn(false, vars.$clr-orange, vars.$clr-orange, vars.$clr-white);
     font-size:15px;
     
-    
+}
+
+.signup-btn{
+    @include components.btn(false, vars.$clr-dark, vars.$clr-dark, vars.$clr-white);
+   
+}
+.login-btn{
+    @include components.btn(false, vars.$clr-white, vars.$clr-white, vars.$clr-dark);
+   
+
 }
