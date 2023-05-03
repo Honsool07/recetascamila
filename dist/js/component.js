@@ -12,6 +12,9 @@ const app = Vue.createApp({
             {id: 7, image:"./imgs/recipes/pina-colada.jpg", name: "Pina Colada", category: "Bebidas", time: "20 mins", level: "Easy", likes: 18, ingredients: "3 tblsp Coconut milk, 3 tblsp Pineapple", instructions: "Mix with crushed ice in blender until smooth.Pour into chilled glass, garnish and serve. GlassServe: Collins glass"},
             {id: 8, image:"./imgs/recipes/strawberry-lemonade.jpg", name: "Strawberry Lemonade", category: "Bebidas", time: "20 mins", level: "Easy", likes: 18, ingredients: "Juice of 1 Lemon, 1 tblsp Sugar, 8-10 ripe Strawberries, 1 cup Water", instructions: "Throw everything into a blender and mix until fairly smooth. Serve over ice. Glass Serve: Collins Glass"}
         ]
+
+
+        
         }
     },
     methods: {
