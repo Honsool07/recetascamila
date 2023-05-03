@@ -4,6 +4,9 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap:1.5rem;
 }
+.footer.bg{
+    background-color:vars.$clr-dark;
+}
 
 .footer .box-container .box h3{
     padding:.5rem 0;

@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Google Fonts-->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&family=Syne:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Inter:wght@100;300;400;600;700&family=Syne:wght@400;600;700&display=swap"
         rel="stylesheet">
-
     <!--Icon Line-->
     <script src="https://kit.fontawesome.com/f664eca71c.js" crossorigin="anonymous"></script>
 
@@ -80,47 +80,47 @@
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                                 <li class="nav-item dropdown ">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class=" nav-txt nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         Categorías
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Desayuno</a></li>
-                                        <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                                        <li><a class="dropdown-item" href="#">Almuerzos</a></li>
-                                        <li><a class="dropdown-item" href="#">Postres</a></li>
-                                        <li><a class="dropdown-item" href="#">Sopas</a></li>
-                                        <li><a class="dropdown-item" href="#">Entradas</a></li>
-                                        <li><a class="dropdown-item" href="#">Todas</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Desayuno</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Bebidas</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Almuerzos</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Postres</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Sopas</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Entradas</a></li>
+                                        <li><a class=" nav-txt dropdown-item" href="#">Todas</a></li>
                                     </ul>
                                 </li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-txt nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         Ocasiones
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Cumpleaños</a></li>
-                                        <li><a class="dropdown-item" href="#">Dia del Padre</a></li>
-                                        <li><a class="dropdown-item" href="#">Dia de la Madre</a></li>
-                                        <li><a class="dropdown-item" href="#">Dia del Niño</a></li>
-                                        <li><a class="dropdown-item" href="#">Navidad</a></li>
-                                        <li><a class="dropdown-item" href="#">Verano</a></li>
-                                        <li><a class="dropdown-item" href="#">Todas</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Cumpleaños</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Dia del Padre</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Dia de la Madre</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Dia del Niño</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Navidad</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Verano</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Todas</a></li>
                                     </ul>
                                 </li>
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-txt nav-link dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         Dificultades
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Facil</a></li>
-                                        <li><a class="dropdown-item" href="#">Intermedio</a></li>
-                                        <li><a class="dropdown-item" href="#">Dicil</a></li>
-                                        <li><a class="dropdown-item" href="#">Todas</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Facil</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Intermedio</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Dicil</a></li>
+                                        <li><a class="nav-txt dropdown-item" href="#">Todas</a></li>
 
                                     </ul>
                                 </li>
@@ -146,16 +146,18 @@
 
         </section>
 
+
         <!--Navbar ends-->
 
         <!--Header starts-->
-        <section class="container-fluid">
+        <section class="container-fluid p-0">
             <header class="position-relative mt-4">
                 <img class="img-fluid rounded" src="./imgs/headerpic.png" alt="header">
 
-                <div class="position-absolute top-50 start-50 translate-middle">
-                    <h1>{{ title }}</h1>
-                    <p>{{ description }}</p>
+                <div class="container position-absolute top-50 start-50 translate-middle">
+                    <h1 class="header-title">{{ title }}</h1>
+                    <p class="text-header">{{ description }}</p>
+                    <button class="btn like-btn"> Ver Todas Las Recetas</button>
                 </div>
             </header>
         </section>
@@ -165,7 +167,8 @@
 
         <section class="container">
             <h2 class="text-center subtitle">Thanks for visiting KookBook recipes!!<h2>
-                    <p class="text-center text ">The KookBook is here to help you cook delicious meals with less stress
+                    <p class="text-center text ">The KookBook is here to help you cook delicious meals with less
+                        stress
                         and
                         more joy. We offer recipes and cooking advice for home cooks, by home cooks. Helping create
                         “kitchen wins” is what we're all about.Our recipes primarily use fresh, unprocessed
@@ -175,98 +178,160 @@
                     </p>
         </section>
 
-        <!-- top 10 section starts  -->
-        <section class="container">
+        <section class="container-fluid p-0" style="background-color: #253137 ;">
+
+            <!-- top 10 section starts  -->
 
 
-            <div class="sec-title text-left">
-
-                <h2 class="mt-5">10 recetas mas votadas </h2>
-
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div v-for="(item, index) in recipes" class="col-md-3 ">
-                        <div class='card shadow p-0.5 mb-5 bg-body rounded'>
-                            <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
-                            <div class="card-body p-0">
-                                <p class="mt-2">{{ item.category }}</p>
-                                <h5 class="card-title">{{ item.name }}</h5>
-                                <p class="card-text">{{ item.description }}</p>
-                                <p>{{ item.time }}</p>
-                                <p>{{ item.level }}</p>
-                                <p>{{ item.likes }}</p>
-                                <button class="btn btn-danger">Like</button>
-                                <button class="btn btn-success">Unlike</button>
-                                <button class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">Ver
-                                    Receta</button>
+            <section class="container">
 
 
+                <div class="sec-title text-left">
+
+                    <h2 class="mt-5">Top 10 recetas</h2>
+
+                </div>
+
+
+
+
+
+                <div class="container">
+                    <div class="row">
+
+
+                        <div v-for="(item, index) in recipes" class="col-md-3">
+                            <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                                <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
+                                <div class="card-body p-0">
+                                    <p class="mt-2 ms-2 badge bg-dark">{{ item.category }}</p>
+                                    <h5 class="ms-2 card-title">{{ item.name }}</h5>
+                                    <p class="card-text">{{ item.description }}</p>
+                                    <p class="ms-2 data-card">{{ item.time }}</p>
+                                    <p class="ms-2 data-card">{{ item.level }}</p>
+                                    <p class="ms-2 data-card">{{ item.likes }}</p>
+                                    <button class="btn like-btn">Like</button>
+                                    <button class="btn unlike-btn">Unlike</button>
+                                    <button class="btn recipecrd-btn" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop">Ver
+                                        Receta</button>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- top 10 section ends -->
+            </section>
 
-  <!-- featured starts -->
-        <section class="container">
+            <!-- top 10 section ends -->
 
-
-            <div class="sec-title text-left">
-
-                <h2 class="mt-5">Recetas Destacadas</h2>
-
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div v-for="(item, index) in recipes" class="col-md-3 ">
-                        <div class='card shadow p-0.5 mb-5 bg-body rounded'>
-                            <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
-                            <div class="card-body p-0">
-                                <p class="mt-2">{{ item.category }}</p>
-                                <h5 class="card-title">{{ item.name }}</h5>
-                                <p class="card-text">{{ item.description }}</p>
-                                <p>{{ item.time }}</p>
-                                <p>{{ item.level }}</p>
-                                <p>{{ item.likes }}</p>
-                                <button class="btn btn-danger">Like</button>
-                                <button class="btn btn-success">Unlike</button>
-                                <button class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">Ver
-                                    Receta</button>
+            <!-- featured starts -->
+            <section class="container ">
 
 
+                <div class="sec-title text-left line">
+
+                    <h2 class="mt-5">Recetas Destacadas</h2>
+
+                </div>
+
+
+
+
+
+                <div class="container">
+                    <div class="row">
+
+
+                        <div v-for="(item, index) in recipes" class="col-md-3">
+                            <div class='card shadow p-0.5 mb-5 bg-body rounded'>
+                                <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
+                                <div class="card-body p-0">
+                                    <p class="mt-2 ms-2 badge bg-dark">{{ item.category }}</p>
+                                    <h5 class="ms-2 card-title">{{ item.name }}</h5>
+                                    <p class="card-text">{{ item.description }}</p>
+                                    <p class="ms-2 data-card">{{ item.time }}</p>
+                                    <p class="ms-2 data-card">{{ item.level }}</p>
+                                    <p class="ms-2 data-card">{{ item.likes }}</p>
+                                    <button class="btn like-btn">Like</button>
+                                    <button class="btn unlike-btn">Unlike</button>
+                                    <button class="btn recipecrd-btn" data-bs-toggle="modal"
+                                        data-bs-target="#staticBackdrop">Ver
+                                        Receta</button>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <!-- Featured ends -->
         </section>
-        <!-- Featured ends -->
-
     </section>
 
-
-
-
+    <!--Carousel starts-->
+    <section class="container mt-4" style="max-width: 1300px;">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./imgs/car1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>SAnguchi</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./imgs/car2.jpg" class=" justify-content-between d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./imgs/car3.jpg" class=" justify-content-between d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
     <!--Footer starts-->
-    <section class="container-fluid">
+    <section class="container-fluid p-0">
         <footer class="bg-dark text-white pt-5 pb-4">
 
             <div class="container text-left text-md-left">
                 <div class="row text-left text-md-left">
                     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class=" mb-4 font weight-bold text-warning main-title">Kook Book</h5>
+                        <h5 class=" mb-4 font weight-bold footer-txt main-title">Kook Book</h5>
                         <p class="md-font">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores modi
                             maxime
                             ullam perferendis! Quidem deserunt eaque, vero eligendi </p>
 
                     </div>
                     <div class="col-mmd-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning">Categorias</h5>
+                        <h5 class=" footer-txt text-uppercase mb-4 font-weight-bold">Categorias</h5>
                         <p>
                             <a href="#" class="text-white" style="text-decoration:none  ;"> Almuerzo</a>
                         </p>
@@ -284,7 +349,7 @@
 
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning"> Links</h5>
+                        <h5 class=" footer-txt text-uppercase mb-4 font-weight-bold"> Links</h5>
 
                         <p>
                             <a href="#" class="text-white" style="text-decoration:none ;"> Tu Cuenta</a>
@@ -305,7 +370,7 @@
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
 
-                        <h5 class=" txt-footer text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+                        <h5 class=" footer-txt text-uppercase mb-4 font-weight-bold">Contacto</h5>
                         <p>
                             <i class="fas fa-home mr-3"></i> Esparza, EP 0613, CR
 
@@ -330,7 +395,7 @@
                     <div class="col-md-7 col-lg-8">
                         <p>Copyright ©2022 All rights reserved by:
                             <a href="#" style="text-decoration:none">
-                                <strong class="text-warning">Kook Book</strong>
+                                <strong class="footer-txt">Kook Book</strong>
 
                             </a>
                         </p>

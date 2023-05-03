@@ -1,15 +1,17 @@
 @use 'utils/vars';
+@use 'media-queries';
 
 @mixin btn ($shadow, $border, $bg, $color){
 
-    font-family: vars.$ff-sans-syne;
-    font-size: vars.$fs-xsm;
+    font-family: vars.$ff-sans-inter;
+    font-size: vars.$fs-xxxsm;
+	font-weight: vars.$fw-semibold;
     position: relative;
     display:table-cell;
     place-items: center;
-    padding: 1rem 2rem;
+    padding: 0.3rem 1.2rem;
     text-decoration: none;
-    border-radius: 5rem;
+    border-radius: 1rem;
     border:$border ;
 
     @if($shadow){
@@ -21,9 +23,9 @@
     
     @include media-queries.respond-to (media-queries.$phone){
     
-    display: block;
-    margin: 1rem auto;
-    width: 80%;
+    //display: block;
+   // margin: 1rem auto;
+    //width: 80%;
     text-align: center;
     
     }
@@ -31,9 +33,9 @@
 
 
 .line{
-	height: 6px;
-	width: 30%;
-	background:#ff5d07;
+	height: 3px;
+	width: 100%;
+	background:#C2D100;
 	display: inline-block;
 }
 

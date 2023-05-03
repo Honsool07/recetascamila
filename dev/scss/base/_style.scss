@@ -1,33 +1,10 @@
+@use 'utils/vars';
 
 .card {
-    border:none;
+    border:vars.$clr-dark;
+    border: 2rem;
     background-color:none;
     
-}
-.square {
-   border-radius: 5rem;
-    background: #f8be53;
-   
-}
-.square-sm {
-    border-radius: 2rem;
-     background: #f8be53;
-     height: 130px;
-     width: 470px;
-     
- }
-.rectangle{
-    background: #f8be53;
-   
-}
-
-
-html{
-   
-    font-family: 'Nunito', sans-serif;
-    overflow-x: hidden;
-    scroll-padding-top: 5.5rem;
-    scroll-behavior: smooth;
 }
 
 a{
@@ -41,24 +18,23 @@ a:hover{
 }
 
 
-
-
-
-.card:hover{
-transform: scale(1.1);
-box-shadow: #4e360a;
+.card:hover{ //animation
+transform: scale(1.02);
+background-color: rgb(182, 182, 182);
 
 }
 
 
-.card{
-    transition: transform .5s;
+.card{//animation
+    transition: transform .2s;
+    border:vars.$clr-dark;
    
 }
 
 .card-img{
-    height:160px !important;
+    height:180px !important;
     object-fit: cover;
+    
 }
 
 .card-img-cats{
@@ -77,6 +53,10 @@ box-shadow: #4e360a;
     opacity: 0.6;
     height: 100vh;
 }
+
+
+
+
 
 
  //media queries  
@@ -119,6 +99,8 @@ body{
     body{
         overflow-x: hidden;
     }
+
+    
 
 }
 

@@ -13392,31 +13392,9 @@ body {
 }
 
 .card {
-  border: none;
+  border: #253137;
+  border: 2rem;
   background-color: none;
-}
-
-.square {
-  border-radius: 5rem;
-  background: #f8be53;
-}
-
-.square-sm {
-  border-radius: 2rem;
-  background: #f8be53;
-  height: 130px;
-  width: 470px;
-}
-
-.rectangle {
-  background: #f8be53;
-}
-
-html {
-  font-family: "Nunito", sans-serif;
-  overflow-x: hidden;
-  scroll-padding-top: 5.5rem;
-  scroll-behavior: smooth;
 }
 
 a {
@@ -13430,21 +13408,21 @@ a:hover {
 }
 
 .card:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-box-shadow: #4e360a;
-          box-shadow: #4e360a;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  background-color: rgb(182, 182, 182);
 }
 
 .card {
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  border: #253137;
 }
 
 .card-img {
-  height: 160px !important;
+  height: 180px !important;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -13623,10 +13601,16 @@ color: white;
   font-weight: bold;
 }
 
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+}
+
 .line {
-  height: 6px;
-  width: 30%;
-  background: #ff5d07;
+  height: 3px;
+  width: 100%;
+  background: #C2D100;
   display: inline-block;
 }
 
@@ -13733,6 +13717,10 @@ color: white;
   gap: 1.5rem;
 }
 
+.footer.bg {
+  background-color: #253137;
+}
+
 .footer .box-container .box h3 {
   padding: 0.5rem 0;
   font-size: 2.5rem;
@@ -13775,7 +13763,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 30px 10px;
+  padding: 10px 10px;
 }
 
 me-2 {
@@ -13789,7 +13777,7 @@ me-2 {
 
 h1 {
   font-family: "Syne", sans-serif;
-  font-size: 4.375rem;
+  font-size: 6.938rem;
   font-weight: 400;
   color: #DA1212;
   width: 50%;
@@ -13807,7 +13795,22 @@ h1 {
   font-family: "Syne", sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
-  color: hsl(200deg, 19%, 18%);
+  color: #253137;
+}
+
+.text-header {
+  font-family: "Syne", sans-serif;
+  font-size: 1.563rem;
+  font-weight: 400;
+  color: #253137;
+}
+@media only screen and (max-width: 480px) {
+  .text-header {
+    text-align: left;
+    font-size: 8px;
+    font-weight: bold;
+    margin-left: 8px;
+  }
 }
 
 h2 {
@@ -13815,4 +13818,112 @@ h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #F08C00;
+}
+
+.card-title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #F08C00;
+}
+
+.data-card {
+  font-family: "Inter", sans-serif;
+  font-size: 0.938;
+  font-weight: 700;
+  color: #253137;
+  line-height: 20px;
+  margin: 1px;
+}
+
+.nav-txt {
+  font-family: "Syne", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #253137;
+}
+
+.header-title {
+  font-family: "Syne", sans-serif;
+  font-size: 6.938rem;
+  font-weight: 400;
+  color: #253137;
+}
+@media only screen and (max-width: 480px) {
+  .header-title {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+.footer-txt {
+  font-family: "Inter", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #C2D100;
+}
+
+.like-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 0.3rem 1.2rem;
+  text-decoration: none;
+  border-radius: 1rem;
+  border: #C2D100;
+  background-color: #C2D100;
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0.3rem;
+}
+@media only screen and (max-width: 480px) {
+  .like-btn {
+    text-align: center;
+  }
+}
+
+.unlike-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 0.3rem 1.2rem;
+  text-decoration: none;
+  border-radius: 1rem;
+  border: #DA1212;
+  background-color: #DA1212;
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0.3rem;
+}
+@media only screen and (max-width: 480px) {
+  .unlike-btn {
+    text-align: center;
+  }
+}
+
+.recipecrd-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 0.3rem 1.2rem;
+  text-decoration: none;
+  border-radius: 1rem;
+  border: #F08C00;
+  background-color: #F08C00;
+  color: #ffffff;
+  font-size: 15px;
+}
+@media only screen and (max-width: 480px) {
+  .recipecrd-btn {
+    text-align: center;
+  }
 }
