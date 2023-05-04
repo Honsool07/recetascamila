@@ -1,0 +1,39 @@
+@use 'utils/vars';
+@use 'media-queries';
+
+@mixin set-font($ffamily, $fsize, $fweight, $fcolor:vars.$clr-dark){
+    font-family: $ffamily;
+    font-size: $fsize;
+    font-weight: $fweight;
+    color: $fcolor;
+}
+
+@mixin btn ($shadow, $border, $bg, $color){
+
+    font-family: vars.$ff-sans-inter;
+    font-size: vars.$fs-xxxsm;
+	font-weight: vars.$fw-semibold;
+    position: relative;
+    display:table-cell;
+    place-items: center;
+    padding: 0.3rem 1.2rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    border:$border ;
+
+    @if($shadow){
+        box-shadow: .13rem .3rem 1rem vars.$clr-light;
+    }
+
+    background-color: $bg;
+    color:$color ;
+    
+    @include media-queries.respond-to (media-queries.$phone){
+    
+    //display: block;
+   // margin: 1rem auto;
+    //width: 80%;
+    text-align: center;
+    
+    }
+}

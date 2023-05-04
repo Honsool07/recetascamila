@@ -16,16 +16,14 @@
     <script src="https://kit.fontawesome.com/f664eca71c.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
-        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
-        crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+   <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
         integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
         crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <link rel="stylesheet" href="./css/main.css">
-    <title>Pagina Principal</title>
+    <title>User Page</title>
 </head>
 
 <body>
@@ -62,6 +60,7 @@
 
 
         <section id="app" class="container">
+            
 
             <div class="position-relative mt-4">
 
@@ -157,68 +156,48 @@
                 <div class="text-center m-4">
                     <img src="./imgs/recipes/banana-pancakes.jpg" class=" m-4 rounded img-fluid img-thumbnail"
                         style=height:200px;"...">
-                    <table class="table m-4 table-sm table-responsive">
-
-                        <tbody>
-                            <tr>
-                                <th scope="row">Username</th>
-                                <td>Honsool07</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">E-Mail</th>
-                                <td>c.amila2013mn@gmail.com</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        <h5 class="ms-2 card-title">Nombre de usuario:</h5>
+                        <table class="table-dark">Honsool</table>
+                        <h5 class="ms-2 card-title">E-mail:</h5>
+                        <table class="table-dark">c.amila2013mn@gmail.com</table>
+                        
+                
                 </div>
 
 
 
             </section>
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                        type="button" role="tab" aria-controls="nav-home" aria-selected="true">Perfil</button>
-                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Recetas
-                        Guardadas</button>
+            
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active m-2" aria-current="page" href="#">Recetas Guardadas</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link disabled m-2" href="#" tabindex="-1" aria-disabled="true">Configuracion</a>
+                </li>
+              </ul>
+            <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
+
+                <div v-for="(item, index) in recipes" class="col-md-3">
+                    <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
+                        <img v-bind:src="item.image" class="card-img rounded float-start"
+                            alt="featured recipe">
+                        <div class="card-body p-0">
+                            <p class="mt-2 ms-2 badge bg-dark">{{ item.category }}</p>
+                            <h5 class="ms-2 card-title">{{ item.name }}</h5>
+                            <p class="card-text">{{ item.description }}</p>
+                            <p class="ms-2 data-card">{{ item.time }}</p>
+                            <p class="ms-2 data-card">{{ item.level }}</p>
+                            <button class="btn recipecrd-btn" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">Ver
+                                Receta</button>
 
 
-                </div>
-            </nav>
-
-
-            <div class="tab-content" id="nav-tabContent">
-                <div>
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                        aria-labelledby="nav-profile-tab">
-
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-home-tab">
-                            <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
-
-
-                                <div v-for="(item, index) in recipes" class="col-md-3">
-                                    <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
-                                        <img v-bind:src="item.image" class="card-img rounded float-start"
-                                            alt="featured recipe">
-                                        <div class="card-body p-0">
-                                            <p class="mt-2 ms-2 badge bg-dark">{{ item.category }}</p>
-                                            <h5 class="ms-2 card-title">{{ item.name }}</h5>
-                                            <p class="card-text">{{ item.description }}</p>
-                                            <p class="ms-2 data-card">{{ item.time }}</p>
-                                            <p class="ms-2 data-card">{{ item.level }}</p>
-                                            <button class="btn recipecrd-btn" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop">Ver
-                                                Receta</button>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-
                     </div>
+                </div>
+            </div>
         </section>
         <!--Footer starts-->
         <section class="container-fluid p-0">
@@ -298,7 +277,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-7 col-lg-8">
                             <p>Copyright ©2022 All rights reserved by:
-                                <a href="#" style="text-decoration:none">
+                                <a href="index.html" style="text-decoration:none">
                                     <strong class="footer-txt">Kook Book</strong>
 
                                 </a>

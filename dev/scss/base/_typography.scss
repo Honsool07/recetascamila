@@ -1,12 +1,7 @@
 @use 'utils/vars';
 
 //set fonts for titles and sections
-@mixin set-font($ffamily, $fsize, $fweight, $fcolor:vars.$clr-dark){
-    font-family: $ffamily;
-    font-size: $fsize;
-    font-weight: $fweight;
-    color: $fcolor;
-}
+
 
 /*
 html{
