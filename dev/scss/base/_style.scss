@@ -2,63 +2,68 @@
 @use './media-queries';
 
 .card {
-    border:vars.$clr-dark;
+    border: vars.$clr-dark;
     border: 2rem;
-    background-color:none;
-    
+    background-color: none;
+
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
     font-weight: 500;
 }
 
-a:hover{
+a:hover {
     color: #ff5d07;
 }
 
 
-.card:hover{ //animation
-transform: scale(1.02);
-background-color: rgb(182, 182, 182);
+.card:hover {
+    //animation
+    transform: scale(1.02);
+    background-color: rgb(182, 182, 182);
 
 }
 
 .square {
-   border-radius: 5rem;
+    border-radius: 5rem;
     background: #f8be53;
     /*height: 560px;*/
 }
-.card{//animation
+
+.card {
+    //animation
     transition: transform .2s;
-    border:vars.$clr-dark;
-   
+    border: vars.$clr-dark;
+
 }
 
-.card-img{
-    height:180px !important;
+.card-img {
+    height: 180px !important;
     object-fit: cover;
-    @include media-queries.respond-to (media-queries.$phone){
-    
-        height:130px !important;
-         
-         }
-    
+
+    @include media-queries.respond-to (media-queries.$phone) {
+
+        height: 130px !important;
+
+    }
+
 }
 
-.card-img-cats{
-    height:400px !important;
+.card-img-cats {
+    height: 400px !important;
     object-fit: cover;
     border-radius: 35px;
 }
 
-.recipes-imgs{
+.recipes-imgs {
 
     object-fit: cover;
 }
-.food-image-container{
-    background-image:no-repeat;
+
+.food-image-container {
+    background-image: no-repeat;
     background-size: cover;
     opacity: 0.6;
     height: 100vh;
@@ -69,63 +74,59 @@ background-color: rgb(182, 182, 182);
 
 
 
- //media queries  
+//media queries  
 
 
+@media (max-width:991px) {
 
-@media (max-width:991px){
+    body {
+        overflow-x: hidden;
+    }
 
-body{
-    overflow-x: hidden;
-}
-    html{
+    html {
         font-size: 55%;
-        
-    }
-    
-    header{
-        padding:1rem 2rem;
+
     }
 
-    section{
-        padding:2rem;
+    header {
+        padding: 1rem 2rem;
     }
-  
+
+    section {
+        padding: 2rem;
+    }
+
 
 }
 
 //Medium devices (landscape tablets, 768px and up) 
-@media only screen and (min-width: 768px) { 
+@media only screen and (min-width: 768px) {
 
-    body{
+    body {
         overflow-x: hidden;
     }
 
 }
 
 
- //Extra small devices (phones, 600px and down) *
-@media only screen and (max-width: 600px){
-    body{
+//Extra small devices (phones, 600px and down) *
+@media only screen and (max-width: 600px) {
+    body {
         overflow-x: hidden;
     }
 
-    
+
 
 }
 
 
-
-
-
- //Small devices (portrait tablets and large phones, 600px and up) *
+//Small devices (portrait tablets and large phones, 600px and up) *
 @media only screen and (min-width: 600px) {
 
-    
-body{
-    overflow-x: hidden;
 
-}
+    body {
+        overflow-x: hidden;
 
+    }
 
 }

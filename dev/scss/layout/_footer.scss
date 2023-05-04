@@ -1,4 +1,5 @@
 @use 'utils/vars';
+
 .footer .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -26,7 +27,7 @@
     text-decoration: underline;
 }
 
-.footer .credit{
+.footer.credit{
     text-align: center;
     border-top: .1rem solid rgba(0,0,0,.1);
     font-size: 2rem;

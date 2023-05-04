@@ -18,18 +18,18 @@
 
 
 h1{
-    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-lg,vars.$fw-regular,  vars.$clr-red);
+    @include mixins.set-font(vars.$ff-sans-syne,vars.$fs-lg,vars.$fw-regular,vars.$clr-red);
     width: 50%;
     margin: 0;
 }
 
 .subtitle{
-    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold, vars.$clr-green);
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold, vars.$clr-green);
 
 }
 
 .sub-login{
-    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark);
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-semibold, vars.$clr-white);
     
         text-align: center;
         line-height: 25px;
@@ -38,7 +38,7 @@ h1{
 }
 
 .welcome{
-    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-xmed, vars.$fw-bold, vars.$clr-dark);
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xmed, vars.$fw-bold, vars.$clr-white);
     
         text-align: center;
         line-height: 3rem;
@@ -47,7 +47,7 @@ h1{
 }
 
 .txt-login{
-    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark);
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark);
     
         text-align: center;
         line-height: 25px;
@@ -57,10 +57,10 @@ h1{
 }
 
 .text{
-    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark); 
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark); 
 }
 .text-header{
-    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark); 
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark); 
    
     @include media-queries.respond-to (media-queries.$phone){
     
@@ -75,15 +75,15 @@ h1{
 
 
 h2{
-    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold,vars.$clr-orange); 
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold,vars.$clr-orange); 
 }
 
 .card-title{
-    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-xxsm,vars.$fw-bold,vars.$clr-orange);
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxsm,vars.$fw-bold,vars.$clr-orange);
 }
 
 .data-card{
-    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-data,vars.$fw-bold,vars.$clr-dark); 
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-data,vars.$fw-bold,vars.$clr-dark); 
     line-height: 20px;
     margin: 1px;
     @include media-queries.respond-to (media-queries.$phone){
@@ -94,12 +94,12 @@ h2{
         }
 }
 .nav-txt{
-    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular,vars.$clr-dark); 
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular,vars.$clr-dark); 
 
 }
 
 .header-title{
-    @include typography.set-font(vars.$ff-sans-syne, vars.$fs-lg, vars.$fw-regular,vars.$clr-dark); 
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-lg, vars.$fw-regular,vars.$clr-dark); 
     @include media-queries.respond-to (media-queries.$phone){
     
         text-align: center;
@@ -112,11 +112,11 @@ h2{
 
 
 .footer-txt{
-    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-xxsm, vars.$fw-bold,vars.$clr-green); 
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxsm, vars.$fw-bold,vars.$clr-green); 
 }
 
 .account-txt{
-    @include typography.set-font(vars.$ff-sans-inter, vars.$fs-data, vars.$fw-regular, vars.$clr-dark); 
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-data, vars.$fw-regular, vars.$clr-dark); 
     margin: 20px;
     
 }
@@ -125,14 +125,15 @@ h2{
 //botones
 
 .like-btn{
-    @include components.btn(false, vars.$clr-green, vars.$clr-green, vars.$clr-white );
-    font-size:15px;
+    @include mixins.btn(false, vars.$clr-green, vars.$clr-green, vars.$clr-white );
+    font-size:13px;
     margin: 0.3rem;
+    padding: 8px;
+   
     @include media-queries.respond-to (media-queries.$phone){
-        font-size:12px;
+        font-size:10px;
        margin-bottom: 5px;
-       
-        
+       padding: 8px;
         
         }
     
@@ -140,24 +141,38 @@ h2{
 
 
 .unlike-btn{
-    @include components.btn(false, vars.$clr-red, vars.$clr-red, vars.$clr-white);
-    font-size:15px;
+    @include mixins.btn(false, vars.$clr-red, vars.$clr-red, vars.$clr-white);
+    font-size:13px;
     margin: 0.3rem;
+    padding: 8px;
+    @include media-queries.respond-to (media-queries.$phone){
+        font-size:10px;
+       margin-bottom: 5px;
+       padding: 8px;
+        
+        }
 }
 
 .recipecrd-btn{
-    @include components.btn(false, vars.$clr-orange, vars.$clr-orange, vars.$clr-white);
-    font-size:15px;
+    @include mixins.btn(false, vars.$clr-orange, vars.$clr-orange, vars.$clr-white);
+    font-size:13px;
     margin: 0.3rem;
+    padding: 8px;
+    @include media-queries.respond-to (media-queries.$phone){
+        font-size:10px;
+       margin-bottom: 5px;
+       padding: 8px;
+       
+        }
     
 }
 
 .signup-btn{
-    @include components.btn(false, vars.$clr-dark, vars.$clr-dark, vars.$clr-white);
+    @include mixins.btn(false, vars.$clr-dark, vars.$clr-dark, vars.$clr-white);
    
 }
 .login-btn{
-    @include components.btn(false, vars.$clr-white, vars.$clr-white, vars.$clr-dark);
+    @include mixins.btn(false, vars.$clr-white, vars.$clr-white, vars.$clr-dark);
    
 
 }
