@@ -84,6 +84,12 @@ h2{
     @include typography.set-font(vars.$ff-sans-inter, vars.$fs-data,vars.$fw-bold,vars.$clr-dark); 
     line-height: 20px;
     margin: 1px;
+    @include media-queries.respond-to (media-queries.$phone){
+    
+        line-height: 12px;
+        
+        
+        }
 }
 .nav-txt{
     @include typography.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular,vars.$clr-dark); 
@@ -121,8 +127,9 @@ h2{
     font-size:15px;
     margin: 0.3rem;
     @include media-queries.respond-to (media-queries.$phone){
-    
+        font-size:12px;
        margin-bottom: 5px;
+       
         
         
         }
@@ -139,6 +146,7 @@ h2{
 .recipecrd-btn{
     @include components.btn(false, vars.$clr-orange, vars.$clr-orange, vars.$clr-white);
     font-size:15px;
+    margin: 0.3rem;
     
 }
 
@@ -151,3 +159,5 @@ h2{
    
 
 }
+
+

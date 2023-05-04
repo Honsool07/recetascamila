@@ -1,4 +1,5 @@
 @use 'utils/vars';
+@use './media-queries';
 
 .card {
     border:vars.$clr-dark;
@@ -24,7 +25,11 @@ background-color: rgb(182, 182, 182);
 
 }
 
-
+.square {
+    border-radius: 5rem;
+     background: #f8be53;
+     /*height: 560px;*/
+ }
 .card{//animation
     transition: transform .2s;
     border:vars.$clr-dark;
@@ -34,6 +39,11 @@ background-color: rgb(182, 182, 182);
 .card-img{
     height:180px !important;
     object-fit: cover;
+    @include media-queries.respond-to (media-queries.$phone){
+    
+        height:130px !important;
+         
+         }
     
 }
 

@@ -13413,6 +13413,12 @@ a:hover {
   background-color: rgb(182, 182, 182);
 }
 
+.square {
+  border-radius: 5rem;
+  background: #f8be53;
+  /*height: 560px;*/
+}
+
 .card {
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
@@ -13425,6 +13431,11 @@ a:hover {
   height: 180px !important;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media only screen and (max-width: 480px) {
+  .card-img {
+    height: 130px !important;
+  }
 }
 
 .card-img-cats {
@@ -14011,6 +14022,11 @@ h2 {
   line-height: 20px;
   margin: 1px;
 }
+@media only screen and (max-width: 480px) {
+  .data-card {
+    line-height: 12px;
+  }
+}
 
 .nav-txt {
   font-family: "Syne", sans-serif;
@@ -14070,6 +14086,7 @@ h2 {
 }
 @media only screen and (max-width: 480px) {
   .like-btn {
+    font-size: 12px;
     margin-bottom: 5px;
   }
 }
@@ -14110,6 +14127,7 @@ h2 {
   background-color: #F08C00;
   color: #ffffff;
   font-size: 15px;
+  margin: 0.3rem;
 }
 @media only screen and (max-width: 480px) {
   .recipecrd-btn {
