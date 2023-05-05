@@ -13391,6 +13391,35 @@ body {
   font-family: "Syne", sans-serif;
 }
 
+@media (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 1rem 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+@media only screen and (min-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 .card {
   border: #253137;
   border: 2rem;
@@ -13399,12 +13428,12 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
-  font-weight: 500;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
 }
 
 a:hover {
-  color: #ff5d07;
+  color: #b32020;
 }
 
 .card:hover {
@@ -13415,7 +13444,7 @@ a:hover {
 
 .square {
   border-radius: 5rem;
-  background: #f8be53;
+  background: #F08C00;
   /*height: 560px;*/
 }
 
@@ -13457,35 +13486,6 @@ a:hover {
   height: 100vh;
 }
 
-@media (max-width: 991px) {
-  body {
-    overflow-x: hidden;
-  }
-  html {
-    font-size: 55%;
-  }
-  header {
-    padding: 1rem 2rem;
-  }
-  section {
-    padding: 2rem;
-  }
-}
-@media only screen and (min-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-}
-@media only screen and (max-width: 600px) {
-  body {
-    overflow-x: hidden;
-  }
-}
-@media only screen and (min-width: 600px) {
-  body {
-    overflow-x: hidden;
-  }
-}
 html {
   overflow-x: hidden;
   scroll-padding-top: 5.5rem;
@@ -13553,31 +13553,6 @@ html {
 }
 
 .btn-outline-secondary:active {
-  position: relative;
-  top: 1px;
-}
-
-.btn-card {
-  font-family: "Nunito";
-  font-weight: bold;
-  font-size: 17px;
-  background-color: #ff5d07;
-  border-color: #f25000;
-  border-radius: 28px;
-  border-width: 4px;
-  color: white;
-  margin: 5;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-
-.btn-card:hover {
-  background-color: #ff5d07;
-}
-
-.btn-card:active {
   position: relative;
   top: 1px;
 }
@@ -13702,31 +13677,31 @@ button:focus {
 }
 
 ::-webkit-input-placeholder {
-  color: #F3F5D5;
+  color: #ffffff;
 }
 
 ::-webkit-input-placeholder .input-line:focus + ::input-placeholder {
-  color: #F3F5D5;
+  color: #ffffff;
 }
 
 .input-line:focus {
   outline: none;
-  border-color: #F3F5D5;
+  border-color: #ffffff;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 .input-line {
   background: none;
-  margin-bottom: 10px;
-  line-height: 2.4em;
-  color: #253137;
-  font-family: "Inter", sans-serif;
+  margin-bottom: 9px;
+  line-height: 2em;
+  color: #ffffff;
+  font-family: "Syne", sans-serif;
   font-weight: 400;
   letter-spacing: 0px;
   letter-spacing: 0.02rem;
-  font-size: 1.25rem;
-  border-bottom: 1px solid #253137;
+  font-size: 1.375rem;
+  border-bottom: 1px solid #ffffff;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
@@ -13749,7 +13724,7 @@ button:focus {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #253137;
+  background: #212529;
   height: 100%;
 }
 
@@ -13767,7 +13742,7 @@ button:focus {
 }
 
 .menu {
-  background: #253137;
+  background: #b32020;
   width: 100%;
   height: 50px;
 }
@@ -13789,19 +13764,9 @@ button:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 580px;
-  width: 380px;
-  background: #253137;
-}
-
-.overlay {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff4986), to(#C2D100));
-  background: linear-gradient(#ff4986, #C2D100);
-  opacity: 0.85;
-  filter: alpha(opacity=85);
-  height: 580px;
-  position: absolute;
-  width: 380px;
-  z-index: 1;
+  width: 450px;
+  border-radius: 2rem;
+  background: #F08C00;
 }
 
 .bold-line {
@@ -13831,7 +13796,7 @@ h1 {
   font-family: "Syne", sans-serif;
   font-size: 6.938rem;
   font-weight: 400;
-  color: #DA1212;
+  color: #b32020;
   width: 50%;
   margin: 0;
 }
@@ -13844,7 +13809,7 @@ h1 {
 }
 
 .sub-login {
-  font-family: "Syne", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: #ffffff;
@@ -13881,6 +13846,13 @@ h1 {
   color: #253137;
 }
 
+.user-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
 .text-header {
   font-family: "Syne", sans-serif;
   font-size: 1.563rem;
@@ -13894,6 +13866,20 @@ h1 {
     font-weight: bold;
     margin-left: 8px;
   }
+}
+
+.ingredients {
+  font-family: "Syne", sans-serif;
+  font-size: 0.938;
+  font-weight: 700;
+  color: #253137;
+}
+
+.instructions {
+  font-family: "Syne", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #253137;
 }
 
 h2 {
@@ -13952,11 +13938,12 @@ h2 {
 }
 
 .account-txt {
-  font-family: "Inter", sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 0.938;
   font-weight: 400;
   color: #253137;
-  margin: 20px;
+  margin: 25px;
+  text-shadow: 3rem;
 }
 
 .like-btn {
@@ -13964,7 +13951,6 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   position: relative;
-  display: table-cell;
   place-items: center;
   padding: 0.3rem 1.2rem;
   text-decoration: none;
@@ -13983,7 +13969,7 @@ h2 {
 }
 @media only screen and (max-width: 480px) {
   .like-btn {
-    font-size: 10px;
+    font-size: 9px;
     margin-bottom: 5px;
     padding: 8px;
   }
@@ -13994,13 +13980,12 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   position: relative;
-  display: table-cell;
   place-items: center;
   padding: 0.3rem 1.2rem;
   text-decoration: none;
   border-radius: 1rem;
-  border: #DA1212;
-  background-color: #DA1212;
+  border: #b32020;
+  background-color: #b32020;
   color: #ffffff;
   font-size: 13px;
   margin: 0.3rem;
@@ -14024,7 +14009,6 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   position: relative;
-  display: table-cell;
   place-items: center;
   padding: 0.3rem 1.2rem;
   text-decoration: none;
@@ -14054,7 +14038,6 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   position: relative;
-  display: table-cell;
   place-items: center;
   padding: 0.3rem 1.2rem;
   text-decoration: none;
@@ -14074,17 +14057,35 @@ h2 {
   font-size: 1.25rem;
   font-weight: 600;
   position: relative;
-  display: table-cell;
   place-items: center;
   padding: 0.3rem 1.2rem;
   text-decoration: none;
   border-radius: 1rem;
   border: #ffffff;
   background-color: #ffffff;
-  color: #253137;
+  color: #F08C00;
 }
 @media only screen and (max-width: 480px) {
   .login-btn {
+    text-align: center;
+  }
+}
+
+.savedrec-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: relative;
+  place-items: center;
+  padding: 0.3rem 1.2rem;
+  text-decoration: none;
+  border-radius: 1rem;
+  border: #C2D100;
+  background-color: #C2D100;
+  color: #253137;
+}
+@media only screen and (max-width: 480px) {
+  .savedrec-btn {
     text-align: center;
   }
 }

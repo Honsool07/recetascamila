@@ -30,26 +30,25 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
+                        <h2 class="sec-title text-left fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}
+                        </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
                             alt="{{ recipes[selectedIndex].name }}">
-                        <p class="text-center f-6">{{ recipes[selectedIndex].ingredients }}</p>
-                        <p class="fst-italic fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
+                        <p class="text-center ingredients f-6">{{ recipes[selectedIndex].ingredients }}</p>
+                        <p class="instructions fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Prev</button>
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickNext()">Next</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickPrev()">Prev</button>
+                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickNext()">Next</button>
+                        <button type="button" class="btn unlike-btn" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Modal -->
-
-
 
 
 
@@ -133,7 +132,7 @@
 
                                 <li class="list-inline-item ">
                                     <a href="#"><i class="fa-solid fa-magnifying-glass  m-2 "></i></a>
-                                    <a href="#"><i class="fa-solid fa-user m-2"></i></a>
+                                    <a href="#"><i class="fa-solid fa-user fa-2xl m-2"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -150,11 +149,10 @@
         <section class="container">
             <section class="container-sm square">
                 <div class="text-center m-4">
-                    <img src="./imgs/recipes/banana-pancakes.jpg" class=" m-4 rounded img-fluid img-thumbnail"
-                        style=height:200px;"...">
-                    <h5 class="ms-2 card-title">Nombre de usuario:</h5>
+                    <img src="./imgs/person.png" class=" m-4 rounded img-fluid " style=height:200px;"...">
+                    <h5 class="ms-2 user-text">Nombre de usuario:</h5>
                     <table class="table-dark">Honsool</table>
-                    <h5 class="ms-2 card-title">E-mail:</h5>
+                    <h5 class="ms-2 user-text">E-mail:</h5>
                     <table class="table-dark">c.amila2013mn@gmail.com</table>
 
 
@@ -166,7 +164,7 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link active m-2" aria-current="page" href="#">Recetas Guardadas</a>
+                    <a class="savedrec-btn active m-2" aria-current="page" href="#">Recetas Guardadas</a>
                 </li>
 
                 <li class="nav-item">
@@ -180,6 +178,7 @@
                         <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
                         <div class="card-body p-0">
                             <p class="mt-2 ms-2 badge bg-dark">{{ item.category }}</p>
+                            <a href="#" class="btn badge bg-danger ms-4">ELIMINAR</a>
                             <h5 class="ms-2 card-title">{{ item.name }}</h5>
                             <p class="card-text">{{ item.description }}</p>
                             <p class="ms-2 data-card">{{ item.time }}</p>

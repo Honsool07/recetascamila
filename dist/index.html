@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    
+
     <section id="app" class="container-fluid">
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -33,19 +33,19 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
+                        <h2 class="sec-title text-left fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
                             alt="{{ recipes[selectedIndex].name }}">
-                        <p class="text-center f-6">{{ recipes[selectedIndex].ingredients }}</p>
-                        <p class="fst-italic fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
+                        <p class="text-center ingredients f-6">{{ recipes[selectedIndex].ingredients }}</p>
+                        <p class="instructions fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()">Prev</button>
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickNext()">Next</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickPrev()">Prev</button>
+                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickNext()">Next</button>
+                        <button type="button" class="btn unlike-btn" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -131,8 +131,8 @@
                                 </form>
 
                                 <li class="list-inline-item ">
-                                    <a href="#"><i class="fa-solid fa-magnifying-glass  m-2 "></i></a> 
-                                    <a href="userPage.html"><i class="fa-solid fa-user m-2"></i></a>
+                                    <a href="#"><i class="fa-solid fa-magnifying-glass  m-2 "></i></a>
+                                    <a href="userPage.html"><i class="fa-solid fa-user fa-2xl m-2"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -201,10 +201,11 @@
                             <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
                                 <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
                                 <div class="card-body p-0">
-                                    <p class="mt-2 ms-2 badge bg-secondary">{{ item.category }}</p><a href="userPage.html">
+                                    <p class="mt-2 ms-2 badge bg-secondary">{{ item.category }}</p><a
+                                        href="userPage.html">
                                         <i class="m-guardar fa-solid fa-bookmark fa-lg"></i>
                                     </a>
-                                    
+
                                     <h5 class="ms-2 card-title">{{ item.name }}</h5>
                                     <p class="card-text">{{ item.description }}</p>
                                     <p class="ms-2 data-card">{{ item.time }}</p>
@@ -248,10 +249,11 @@
                             <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
                                 <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
                                 <div class="card-body p-0">
-                                    <p class="mt-2 ms-2 badge bg-secondary">{{ item.category }}</p><a href="userPage.html">
+                                    <p class="mt-2 ms-2 badge bg-secondary">{{ item.category }}</p><a
+                                        href="userPage.html">
                                         <i class="m-guardar fa-solid fa-bookmark fa-lg"></i>
                                     </a>
-                                    
+
                                     <h5 class="ms-2 card-title">{{ item.name }}</h5>
                                     <p class="card-text">{{ item.description }}</p>
                                     <p class="ms-2 data-card">{{ item.time }}</p>

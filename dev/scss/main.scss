@@ -16,6 +16,7 @@
 
 @use'./utils/mixins';
 
+//titles, subtitle y text
 
 h1{
     @include mixins.set-font(vars.$ff-sans-syne,vars.$fs-lg,vars.$fw-regular,vars.$clr-red);
@@ -29,7 +30,7 @@ h1{
 }
 
 .sub-login{
-    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-semibold, vars.$clr-white);
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxxsm,vars.$fw-semibold, vars.$clr-white);
     
         text-align: center;
         line-height: 25px;
@@ -59,6 +60,10 @@ h1{
 .text{
     @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark); 
 }
+.user-text{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxsm,vars.$fw-bold, vars.$clr-white); 
+}
+
 .text-header{
     @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark); 
    
@@ -72,6 +77,17 @@ h1{
         
         }
 }
+.ingredients{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-data,vars.$fw-bold, vars.$clr-dark); 
+   
+    
+}
+.instructions{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark); 
+   
+    
+}
+
 
 
 h2{
@@ -116,10 +132,14 @@ h2{
 }
 
 .account-txt{
-    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-data, vars.$fw-regular, vars.$clr-dark); 
-    margin: 20px;
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-data, vars.$fw-regular, vars.$clr-dark); 
+    margin: 25px;
+    text-shadow: 3rem;
+    
+    
     
 }
+
 
 
 //botones
@@ -138,7 +158,6 @@ h2{
         }
     
 }
-
 
 .unlike-btn{
     @include mixins.btn(false, vars.$clr-red, vars.$clr-red, vars.$clr-white);
@@ -172,9 +191,14 @@ h2{
    
 }
 .login-btn{
-    @include mixins.btn(false, vars.$clr-white, vars.$clr-white, vars.$clr-dark);
+    @include mixins.btn(false, vars.$clr-white, vars.$clr-white, vars.$clr-orange);
    
 
 }
 
+.savedrec-btn{
+    @include mixins.btn(false, vars.$clr-green, vars.$clr-green, vars.$clr-dark);
+   
+
+}
 

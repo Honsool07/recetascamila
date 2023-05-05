@@ -11,3 +11,62 @@ $retina: '(min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), 
     } 
 }
 
+
+
+
+//media queries  
+
+
+@media (max-width:991px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    html {
+        font-size: 55%;
+
+    }
+
+    header {
+        padding: 1rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+
+}
+
+//Medium devices (landscape tablets, 768px and up) 
+@media only screen and (min-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+}
+
+
+//Extra small devices (phones, 600px and down) *
+@media only screen and (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+
+
+}
+
+
+//Small devices (portrait tablets and large phones, 600px and up) *
+@media only screen and (min-width: 600px) {
+
+
+    body {
+        overflow-x: hidden;
+
+    }
+
+}

@@ -10,12 +10,12 @@
 
 a {
     text-decoration: none;
-    color: black;
-    font-weight: 500;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
 }
 
 a:hover {
-    color: #ff5d07;
+    color: vars.$clr-red;
 }
 
 
@@ -28,7 +28,7 @@ a:hover {
 
 .square {
     border-radius: 5rem;
-    background: #f8be53;
+    background: vars.$clr-orange;
     /*height: 560px;*/
 }
 
@@ -67,66 +67,4 @@ a:hover {
     background-size: cover;
     opacity: 0.6;
     height: 100vh;
-}
-
-
-
-
-
-
-//media queries  
-
-
-@media (max-width:991px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    html {
-        font-size: 55%;
-
-    }
-
-    header {
-        padding: 1rem 2rem;
-    }
-
-    section {
-        padding: 2rem;
-    }
-
-
-}
-
-//Medium devices (landscape tablets, 768px and up) 
-@media only screen and (min-width: 768px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-}
-
-
-//Extra small devices (phones, 600px and down) *
-@media only screen and (max-width: 600px) {
-    body {
-        overflow-x: hidden;
-    }
-
-
-
-}
-
-
-//Small devices (portrait tablets and large phones, 600px and up) *
-@media only screen and (min-width: 600px) {
-
-
-    body {
-        overflow-x: hidden;
-
-    }
-
 }
