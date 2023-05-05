@@ -13985,7 +13985,7 @@ h2 {
   .like-btn {
     font-size: 10px;
     margin-bottom: 5px;
-    padding: 0.063rem;
+    padding: 8px;
   }
 }
 
@@ -14013,7 +14013,7 @@ h2 {
 }
 @media only screen and (max-width: 480px) {
   .unlike-btn {
-    font-size: 10px;
+    font-size: 9px;
     margin-bottom: 5px;
     padding: 8px;
   }
