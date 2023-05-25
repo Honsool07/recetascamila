@@ -40,9 +40,8 @@ const app = Vue.createApp({
 
                 { id: 10, image: "./imgs/recipes/pizza.jpg", name: "Pizza con Rugula", category: "Entradas", time: "50 mins", level: "Difficult", likes: 18, ingredients: "1 Pieza Pechuga de pollo milanesa, 150 g, 60 Gramos Queso de cabra rollo de pollo,1 Sobre Jugoso al Sartén MAGGI® Tomate y Especias,3 Piezas Pan pita para pizza,200 Gramos Queso Mozzarella Nestlé, 15 Rodajas Pepperoni pizza, rodajas, 75 g,15 Hojas Albahaca fresca pizza, hojas, desinfectadas, 3 g", instructions: " Rellena la milanesa con el queso de cabra y enrolla cuidadosamente para evitar que se salga el relleno. Abre una hoja de Jugoso al Sartén MAGGI® Tomate y Especias, coloca el rollo, cierra y presiona ligeramente para que se impregnen las especias.Colócalo en una sartén sin aceite, precalentada a fuego bajo durante 1 minuto; tapa y cocina a fuego bajo de 7 a 8 minutos por cada lado." },
 
-
-
             ]
+
 
 
         }
