@@ -13,12 +13,20 @@ app.component('recipe-details',{
             type: String
         }
     },
+    mounted(){
+        this.$test.on('foo', function(data){
+            console.log(data);
+        });
+    },
     methods:{
         onClickPrev(){
             console.log("PREV");
+            this.$emit('prevrecipe', this.index);
+
         },
         onClickNext(){
             console.log("NEXT");
+            this.$emit('nextrecipe', this.index);
         }
     },
     template:
