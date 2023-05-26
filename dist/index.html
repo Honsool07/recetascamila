@@ -27,35 +27,36 @@
 <body>
 
     <section id="app" class="container-fluid">
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="sec-title text-left fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
-                            alt="{{ recipes[selectedIndex].name }}">
-                        <p class="text-center ingredients f-6">{{ recipes[selectedIndex].ingredients }}</p>
-                        <p class="instructions fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickPrev()">Prev</button>
-                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickNext()">Next</button>
-                        <button type="button" class="btn unlike-btn" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-
+       
+       
 
 
 
         <section id="app" class="container">
+            <recipe-details :name="recipe.name" :image="recipe.image" :instructions="recipe.instructions" :ingredients="recipe.ingredients"  v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
+
+
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li v-for="(category, index) in categories" class="nav-item">
+                            <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+
+
+        <section class="row">
+            <div v-for="(item, index) in recipes" class="col-md-3">
+                <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id" v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+            </div>
+        </section>
+            
 
             <div class="position-relative mt-4">
 
@@ -175,6 +176,20 @@
                     </p>
         </section>
 
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li v-for="(category, index) in categories" class="nav-item">
+                            <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+
         <section class="container-fluid p-0" style="background-color: #253137 ;">
 
             <!-- top 10 section starts  -->
@@ -189,40 +204,24 @@
 
                 </div>
 
+               
 
 
 
 
                 <div class="container">
-                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-2">
-
-
-                        <div v-for="(item, index) in recipes" class="col-md-3">
-                            <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
-                                <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
-                                <div class="card-body p-0">
-                                    <p class="mt-2 ms-2 badge bg-secondary">{{ item.category }}</p><a
-                                        href="userPage.html">
-                                        <i class="m-guardar fa-solid fa-bookmark fa-lg"></i>
-                                    </a>
-
-                                    <h5 class="ms-2 card-title">{{ item.name }}</h5>
-                                    <p class="card-text">{{ item.description }}</p>
-                                    <p class="ms-2 data-card">{{ item.time }}</p>
-                                    <p class="ms-2 data-card">{{ item.level }}</p>
-                                    <p class="ms-2 data-card">{{ item.likes }}</p>
-                                    <button class="btn like-btn">Like</button>
-                                    <button class="btn unlike-btn">Unlike</button>
-                                    <button class="btn recipecrd-btn" data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop">Ver
-                                        Receta</button>
-
-
-                                </div>
-                            </div>
-                        </div>
+                    <recipe-details :name="recipe.name" :image="recipe.image" :instructions="recipe.instructions"
+                    :ingredients="recipe.ingredients" v-on:prevrecipe="onClickPrev"
+                    v-on:nextrecipe="onClickNext"></recipe-details>
+                    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
+                    <div v-for="(item, index) in recipes" class="col-md-3">
+                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                            :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id"
+                            v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
+                            v-on:recipedetails="onClickRecipeDetails"></recipe-card>
                     </div>
                 </div>
+            </div>
             </section>
 
             <!-- top 10 section ends -->
@@ -242,33 +241,23 @@
 
 
                 <div class="container">
-                    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
+                    <recipe-details :name="recipe.name" :image="recipe.image" :instructions="recipe.instructions"
+                    :ingredients="recipe.ingredients" v-on:prevrecipe="onClickPrev"
+                    v-on:nextrecipe="onClickNext"></recipe-details>
 
 
-                        <div v-for="(item, index) in recipes" class="col-md-3">
-                            <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
-                                <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
-                                <div class="card-body p-0">
-                                    <p class="mt-2 ms-2 badge bg-secondary">{{ item.category }}</p><a
-                                        href="userPage.html">
-                                        <i class="m-guardar fa-solid fa-bookmark fa-lg"></i>
-                                    </a>
-
-                                    <h5 class="ms-2 card-title">{{ item.name }}</h5>
-                                    <p class="card-text">{{ item.description }}</p>
-                                    <p class="ms-2 data-card">{{ item.time }}</p>
-                                    <p class="ms-2 data-card">{{ item.level }}</p>
-                                    <p class="ms-2 data-card">{{ item.likes }}</p>
-                                    <button class="btn like-btn">Like</button>
-                                    <button class="btn unlike-btn">Unlike</button>
-                                    <button class="btn recipecrd-btn" data-bs-toggle="modal"
-                                        data-bs-target="#staticBackdrop">Ver
-                                        Receta</button>
 
 
-                                </div>
-                            </div>
-                        </div>
+                <div class="container">
+                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-2">
+                    <div v-for="(item, index) in recipes" class="col-md-3">
+                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                            :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id"
+                            v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
+                            v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                    </div>
+                </div>
+
                     </div>
                 </div>
             </section>
@@ -322,6 +311,9 @@
             </button>
         </div>
     </section>
+
+
+
     <!--Footer starts-->
     <section class="container-fluid p-0">
         <footer class="bg-dark text-white pt-5 pb-4">
@@ -460,19 +452,24 @@
 
     <!-- VueJS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-     <!-- custom events - components -->
 
-     <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <!-- custom events - components -->
 
-     <!-- AXIOS Script -->
-     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+
+    <!-- AXIOS Script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <!-- main script -->
-    <script src="./js/main.js"></script>
-    <!-- mounted -->
+    <script src="./js/component.js"></script>
+
+    <script src="./js/components/RecipeCard.js"></script>
+    <script src="./js/components/RecipeCategoryButton.js"></script>
+    <script src="./js/components/RecipeDetails.js"></script>
+
     <script>
         const mountedApp = app.mount("#app");
     </script>
-
 </body>
 
 </html>

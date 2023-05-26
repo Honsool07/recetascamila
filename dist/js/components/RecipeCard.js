@@ -50,18 +50,28 @@ app.component('recipe-card',{
     },
     template:
     /*html*/
-    `<div class="card p-3">
-        <img v-bind:src="image" class="card-img-top rounded" alt="featured recipe">
+    `
+        <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
+            <img v-bind:src="image" class="card-img rounded float-start" alt="featured recipe">
             <div class="card-body p-0">
-                <p class="mt-2">{{ category }}</p>
-                <h5 class="card-title">{{ name }}</h5>
+                <p class="mt-2 ms-2 badge bg-secondary">{{ category }}</p><a
+                    href="userPage.html">
+                    <i class="m-guardar fa-solid fa-bookmark fa-lg"></i>
+                </a>
+    
+                <h5 class="ms-2 card-title">{{ name }}</h5>
                 <p class="card-text">{{ description }}</p>
-                <p>{{ time }}</p>
-                <p>{{ level }}</p>
-                <p>{{ likes }}</p>
-                <button class="btn btn-danger" v-on:click="onClickLike()">Like</button>
-                <button class="btn btn-success" v-on:click="onClickUnlike()">Unlike</button>
-                <button class="btn btn-primary" v-on:click="onClickViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Recipe</button>
+                <p class="ms-2 data-card">{{ time }}</p>
+                <p class="ms-2 data-card">{{ level }}</p>
+                <p class="ms-2 data-card">{{ likes }}</p>
+                <button class="btn like-btn">Like</button>
+                <button class="btn unlike-btn">Unlike</button>
+                <button class="btn recipecrd-btn" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Ver
+                    Receta</button>
+    
+    
             </div>
-    </div>`
+        </div>
+   `
 })
