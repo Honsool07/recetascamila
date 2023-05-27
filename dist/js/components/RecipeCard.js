@@ -64,11 +64,10 @@ app.component('recipe-card',{
                 <p class="ms-2 data-card">{{ time }}</p>
                 <p class="ms-2 data-card">{{ level }}</p>
                 <p class="ms-2 data-card">{{ likes }}</p>
-                <button class="btn like-btn">Like</button>
-                <button class="btn unlike-btn">Unlike</button>
-                <button class="btn recipecrd-btn" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">Ver
-                    Receta</button>
+                <button v-on:click="onClickLike()"  class="btn like-btn">Like</button>
+                <button v-on:click="onClickUnlike()" class="btn unlike-btn">Unlike</button>
+                <button v-on:click="onClickViewRecipe()" class="btn recipecrd-btn" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Ver Receta</button>
     
     
             </div>

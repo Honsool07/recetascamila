@@ -1,37 +1,37 @@
-app.component('recipe-details',{
-    props:{
-        name:{
+app.component('recipe-details', {
+    props: {
+        name: {
             type: String
         },
-        image:{
+        image: {
             type: String
         },
-        ingredients:{
+        ingredients: {
             type: String
         },
-        instructions:{
+        instructions: {
             type: String
         }
     },
-    mounted(){
-        this.$test.on('foo', function(data){
+    mounted() {
+        this.$test.on('foo', function (data) {
             console.log(data);
         });
     },
-    methods:{
-        onClickPrev(){
+    methods: {
+        onClickPrev() {
             console.log("PREV");
             this.$emit('prevrecipe', this.index);
 
         },
-        onClickNext(){
+        onClickNext() {
             console.log("NEXT");
             this.$emit('nextrecipe', this.index);
         }
     },
     template:
-    /*html*/
-    `<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        /*html*/
+        `<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

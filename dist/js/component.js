@@ -5,23 +5,23 @@ const app = Vue.createApp({
             selectedIndex: 0,
             all_recipes:[],
             hasRecipes: true,
-            recipes:[ //si hay llaves hay objetos
+            recipes:[ 
             {id: 1, image:"./images/recipes/sushi.jpg", name: "", category: "", time: "", level: "", likes: 18, ingredients: "", instructions: ""},],
             categories:[
-            { name: 'main course' },
-            { name: 'side dish' },
-            { name: 'dessert' },
-            { name: 'appetizer' },
-            { name: 'salad' },
-            { name: 'bread' },
-            { name: 'breakfast' },
-            { name: 'soup' },
-            { name: 'beverage' },
-            { name: 'sauce' },
-            { name: 'marinade' },
-            { name: 'fingerfood' },
-            { name: 'snack' },
-            { name: 'drink' }
+            { name: 'Main course' },
+            { name: 'Side dish' },
+            { name: 'Dessert' },
+            { name: 'Appetizer' },
+            { name: 'Salad' },
+            { name: 'Bread' },
+            { name: 'Breakfast' },
+            { name: 'Soup' },
+            { name: 'Beverage' },
+            { name: 'Sauce' },
+            { name: 'Marinade' },
+            { name: 'Fingerfood' },
+            { name: 'Snack' },
+            { name: 'Drink' }
             
         ],
         recipe:{},
@@ -30,62 +30,7 @@ const app = Vue.createApp({
     mounted:function(){
         this.all_recipes = this.recipes;
 
-        
-
-        //connect to API
-        /*axios({
-            method:'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
-        })
-        .then(
-            (response) => {
-                console.log(response.data.meals);
-                //this.categories = response.data.meals;
-                let items = response.data.meals;
-                items.forEach( (element, index) => {
-                    this.categories.push({ id: index, name: element.strCategory });
-                });
-                console.log(this.categories);
-            }
-        )
-        .catch(
-            error => console.log(error)
-        );*/
-
-        //connect to API to get deffault category
-        /*axios({
-            method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
-
-        })
-        .then(
-            (response) => {
-
-                let items = response.data.meals;
-                console.log(items);
-
-                this.recipes = [];
-
-                if(items.length > 0) this.loading = false;
-
-                items.forEach(element => {
-                    this.recipes.push({ 
-                         id: element.idMeal,
-                         image: element.strMealThumb,
-                         name: element.strMeal,
-                         category: 'Seafood',
-                         time: "20 mins",
-                         level: "Easy",
-                         likes: 18,
-                         ingredients: "NA",
-                         instructions: "NA" })
-                });
-              
-            }
-        )
-        .catch(
-            error => console.log(error)
-        );*/
+    
         axios({
             method: 'get',
             url: 'https://api.spoonacular.com/recipes/complexSearch?type=maincourse&apiKey=3262608b5ca0447299783d90b86cbf50'
@@ -99,7 +44,7 @@ const app = Vue.createApp({
 
                 this.recipes = [];
 
-                if(items.length > 0) this.loading = false;
+                //if(items.length > 0) this.loading = false;
 
                 items.forEach(element => {
                     this.recipes.push({ 
@@ -138,7 +83,7 @@ const app = Vue.createApp({
             })
             .then(
                 (response) => {
-                    //console.log(response.data.meals);
+                    
                     let item = response.data;
 
                     this.recipe.id = index;
@@ -163,53 +108,7 @@ const app = Vue.createApp({
             );
         },
         onClickSelectedCategory(category){
-            /*if(category == "All"){
-                this.hasRecipes = true;
-                this.recipes = this.all_recipes;
-            }else{
-                this.recipes = this.all_recipes;
-                let recipesInCategory = this.recipes.filter(function(el){
-                    return el.category === category;
-                });
-                //console.log(recipesInCategory.length);
-                if(recipesInCategory.length > 0) {
-                    this.hasRecipes = true;
-                    this.recipes = recipesInCategory;
-                }else{
-                    this.hasRecipes = false;
-                }
-            }*/
-            /*axios({
-                method: 'get',
-                url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c='+category
-    
-            })
-            .then(
-                (response) => {
-                    console.log(response.data.meals);
-
-                   this.recipes = [];
-                    let items = response.data.meals;
-                    items.forEach(element => {
-                        this.recipes.push({ 
-                             id: element.idMeal,
-                             image: element.strMealThumb,
-                             name: element.strMeal,
-                             category: category,
-                             time: "20 mins",
-                             level: "Easy",
-                             likes: 18,
-                             ingredients: "NA",
-                             instructions: "NA" })
-                    });
-                  
-                }
-            )
-            .catch(
-                error => console.log(error)
-            );*/
-
-            //get recipe category from new API
+          
             axios({
                 method: 'get',
                 url: 'https://api.spoonacular.com/recipes/complexSearch?type='+category+'&apiKey=3262608b5ca0447299783d90b86cbf50'

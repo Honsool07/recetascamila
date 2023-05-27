@@ -32,30 +32,7 @@
 
 
 
-        <section id="app" class="container">
-            <recipe-details :name="recipe.name" :image="recipe.image" :instructions="recipe.instructions" :ingredients="recipe.ingredients"  v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
-
-
-        <div class="row">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li v-for="(category, index) in categories" class="nav-item">
-                            <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
-                        </li>
-                    </ul>
-
-                </div>
-            </nav>
-        </div>
-
-
-        <section class="row">
-            <div v-for="(item, index) in recipes" class="col-md-3">
-                <recipe-card :image="item.image" :category="item.category" :name="item.name" :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id" v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-            </div>
-        </section>
+        <section class="container">
             
 
             <div class="position-relative mt-4">
