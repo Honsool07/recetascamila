@@ -27,13 +27,13 @@
 <body>
 
     <section id="app" class="container-fluid">
-       
-       
+
+
 
 
 
         <section class="container">
-            
+
 
             <div class="position-relative mt-4">
 
@@ -126,6 +126,9 @@
 
         <!--Header starts-->
         <section class="container-fluid p-0">
+            <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+                Popover on top
+              </button>
             <header class="position-relative mt-4">
                 <img class="img-fluid rounded" src="./imgs/headerpic.png" alt="header">
 
@@ -141,16 +144,10 @@
 
 
         <section class="container mt-4 mb-4">
-            <h2 class="text-center subtitle">Thanks for visiting KookBook recipes!!<h2>
-                    <p class="text-center text ">The KookBook is here to help you cook delicious meals with less
-                        stress
-                        and
-                        more joy. We offer recipes and cooking advice for home cooks, by home cooks. Helping create
-                        “kitchen wins” is what we're all about.Our recipes primarily use fresh, unprocessed
-                        ingredients
-                        but we also believe there is a time and a place for canned, frozen, and other prepared
-                        ingredients.
-                    </p>
+
+            <welcome title="Thanks for visiting KookBook recipes!"
+                description="The KookBook is here to help you cook delicious meals with less stress and more joy. We offer recipes and cooking advice for home cooks, by home cooks. Helping create “kitchen wins” is what we`re all about.">
+            </welcome>
         </section>
 
         <div class="row">
@@ -159,7 +156,8 @@
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li v-for="(category, index) in categories" class="nav-item">
-                            <recipe-category-button :name="category.name" v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
+                            <recipe-category-button :name="category.name"
+                                v-on:selectedcategory="onClickSelectedCategory"></recipe-category-button>
                         </li>
                     </ul>
 
@@ -172,33 +170,35 @@
             <!-- top 10 section starts  -->
 
 
-            <section class="container">
+            <section class="  container">
 
 
-                <div class="sec-title text-left">
+                <div class=" mt-5 sec-title text-left">
 
                     <h2>Top 10 recetas mas votadas</h2>
 
                 </div>
 
-               
+
 
 
 
 
                 <div class="container">
                     <recipe-details :name="recipe.name" :image="recipe.image" :instructions="recipe.instructions"
-                    :ingredients="recipe.ingredients" v-on:prevrecipe="onClickPrev"
-                    v-on:nextrecipe="onClickNext"></recipe-details>
+                        :ingredients="recipe.ingredients" :cooktime="recipe.cookingMinutes"
+                        :preptime="recipe.preparationMinutes" v-on:prevrecipe="onClickPrev"
+                        v-on:nextrecipe="onClickNext"></recipe-details>
                     <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
-                    <div v-for="(item, index) in recipes" class="col-md-3">
-                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                            :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id"
-                            v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
-                            v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                        <div v-for="(item, index) in recipes" class="col-md-3">
+                            <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                                :description="item.instructions" :level="item.level" :likes="item.likes"
+                                :index="item.id" v-on:recipelike="onClickRecipeLike"
+                                v-on:recipeunlike="onClickRecipeUnlike"
+                                v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                        </div>
                     </div>
                 </div>
-            </div>
             </section>
 
             <!-- top 10 section ends -->
@@ -219,21 +219,22 @@
 
                 <div class="container">
                     <recipe-details :name="recipe.name" :image="recipe.image" :instructions="recipe.instructions"
-                    :ingredients="recipe.ingredients" v-on:prevrecipe="onClickPrev"
-                    v-on:nextrecipe="onClickNext"></recipe-details>
+                        :ingredients="recipe.ingredients" v-on:prevrecipe="onClickPrev"
+                        v-on:nextrecipe="onClickNext"></recipe-details>
 
 
 
 
-                <div class="container">
-                    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-2">
-                    <div v-for="(item, index) in recipes" class="col-md-3">
-                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                            :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id"
-                            v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
-                            v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-                    </div>
-                </div>
+                    <div class="container">
+                        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-2">
+                            <div v-for="(item, index) in recipes" class="col-md-3">
+                                <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                                    :description="item.instructions" :level="item.level" :likes="item.likes"
+                                    :index="item.id" v-on:recipelike="onClickRecipeLike"
+                                    v-on:recipeunlike="onClickRecipeUnlike"
+                                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -443,6 +444,7 @@
     <script src="./js/components/RecipeCard.js"></script>
     <script src="./js/components/RecipeCategoryButton.js"></script>
     <script src="./js/components/RecipeDetails.js"></script>
+    <script src="./js/components/welcome.js"></script>
 
     <script>
         const mountedApp = app.mount("#app");

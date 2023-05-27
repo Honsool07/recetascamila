@@ -1,6 +1,9 @@
 const app = Vue.createApp({
     data(){
         return{
+            title: "KookBook Recipes!",
+            description: "Everyones favorites recipes for anytime in the day",
+            image: "./imgs/headerpic.png",
             loading: true,
             selectedIndex: 0,
             all_recipes:[],
@@ -90,7 +93,9 @@ const app = Vue.createApp({
                     this.recipe.image = item.image;
                     this.recipe.name = item.title;
                     this.recipe.category = "";
-                    this.recipe.time = item.readyInMinutes + " mins";
+                    //this.recipe.time = item.readyInMinutes + " mins";
+                    this.recipe.cookingMinutes = item.cookingMinutes;
+                    this.recipe.preparationMinutes = item.preparationMinutes;
                     this.recipe.level = "";
                     this.recipe.likes = item.aggregateLikes;
                     this.recipe.instructions = item.instructions;

@@ -1,3 +1,55 @@
+app.component('navbar', {
+
+    props:{
+        title:{
+            type:String,
+            default: "default title"
+        },
+        subtitle:{
+            type:String,
+            default: "default subtitle"
+        },
+        description:{
+            type:String,
+            default: "default description"
+        },
+        table:{
+            table:String,
+            default: "default table"
+        },
+        menu:{
+            type:String,
+            default: "default menu"
+        },
+        activity:{
+            type:String,
+            default: "default activity"
+        },
+        time:{
+            type:String,
+            default: "default time"
+        },
+        image:{
+            type: String
+        },
+    
+        
+    },
+    
+    data(){
+        return{
+            counter: 0
+        }
+    },
+    
+    
+        template:
+            /* html */
+    
+            `
+
+
+
 /*<nav class="row justify-content-around navbar navbar-white navbar-expand-lg ">
 
                     <div class="container-fluid">
