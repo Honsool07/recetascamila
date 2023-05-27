@@ -1,1 +1,127 @@
-@use 'utils/vars';
+@use './utils/vars';
+@use'./utils/mixins';
+@use './media-queries';
+
+//titles, subtitle y text
+
+h1{
+    @include mixins.set-font(vars.$ff-sans-syne,vars.$fs-lg,vars.$fw-regular,vars.$clr-red);
+    width: 50%;
+    margin: 0;
+}
+
+.subtitle{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold, vars.$clr-green);
+
+}
+
+.sub-login{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxxsm,vars.$fw-semibold, vars.$clr-white);
+    
+        text-align: center;
+        line-height: 25px;
+        margin-top: 30px;
+      
+}
+
+.welcome{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xmed, vars.$fw-bold, vars.$clr-white);
+    
+        text-align: center;
+        line-height: 3rem;
+        margin-top: 75px;
+      
+}
+
+.txt-login{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark);
+    
+        text-align: center;
+        line-height: 25px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      
+}
+
+.text{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark); 
+}
+.user-text{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxsm,vars.$fw-bold, vars.$clr-white); 
+}
+
+.text-header{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xsm,vars.$fw-regular, vars.$clr-dark); 
+   
+    @include media-queries.respond-to (media-queries.$phone){
+    
+        text-align: left;
+        font-size: 8px;
+        font-weight: bold;
+        margin-left: 8px;
+        
+        
+        }
+}
+.ingredients{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-data,vars.$fw-bold, vars.$clr-dark); 
+   
+    
+}
+.instructions{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular, vars.$clr-dark); 
+   
+    
+}
+
+
+
+h2{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-med,vars.$fw-bold,vars.$clr-orange); 
+}
+
+.card-title{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxsm,vars.$fw-bold,vars.$clr-orange);
+}
+
+.data-card{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-data,vars.$fw-bold,vars.$clr-dark); 
+    line-height: 20px;
+    margin: 1px;
+    @include media-queries.respond-to (media-queries.$phone){
+    
+        line-height: 12px;
+        
+        
+        }
+}
+.nav-txt{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-xxxsm,vars.$fw-regular,vars.$clr-dark); 
+
+}
+
+.header-title{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-lg, vars.$fw-regular,vars.$clr-dark); 
+    @include media-queries.respond-to (media-queries.$phone){
+    
+        text-align: center;
+        font-size: 20px;
+        
+        
+        }
+
+}
+
+
+.footer-txt{
+    @include mixins.set-font(vars.$ff-sans-inter, vars.$fs-xxsm, vars.$fw-bold,vars.$clr-green); 
+}
+
+.account-txt{
+    @include mixins.set-font(vars.$ff-sans-syne, vars.$fs-data, vars.$fw-regular, vars.$clr-dark); 
+    margin: 25px;
+    text-shadow: 3rem;
+    
+    
+    
+}

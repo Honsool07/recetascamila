@@ -1,5 +1,6 @@
 @use 'utils/vars';
-@use 'media-queries';
+@use './media-queries';
+@use'./utils/mixins';
 
 
 
@@ -83,4 +84,66 @@
 	top:1px;
 }
 
+
+
+
+//botones
+
+.like-btn{
+    @include mixins.btn(false, vars.$clr-green, vars.$clr-green, vars.$clr-white );
+    font-size:13px;
+    margin: 0.3rem;
+    padding: 8px;
+   
+    @include media-queries.respond-to (media-queries.$phone){
+        font-size:9px;
+       margin-bottom: 5px;
+       padding: 8px;
+        
+        }
+    
+}
+
+.unlike-btn{
+    @include mixins.btn(false, vars.$clr-red, vars.$clr-red, vars.$clr-white);
+    font-size:13px;
+    margin: 0.3rem;
+    padding: 8px;
+    @include media-queries.respond-to (media-queries.$phone){
+        font-size:9px;
+       margin-bottom: 5px;
+       padding: 8px;
+        
+        }
+}
+
+.recipecrd-btn{
+    @include mixins.btn(false, vars.$clr-orange, vars.$clr-orange, vars.$clr-white);
+    font-size:13px;
+    margin: 0.3rem;
+    padding: 8px;
+    @include media-queries.respond-to (media-queries.$phone){
+        font-size:10px;
+       margin-bottom: 5px;
+       padding: 8px;
+       
+        }
+    
+}
+
+.signup-btn{
+    @include mixins.btn(false, vars.$clr-dark, vars.$clr-dark, vars.$clr-white);
+   
+}
+.login-btn{
+    @include mixins.btn(false, vars.$clr-white, vars.$clr-white, vars.$clr-orange);
+   
+
+}
+
+.savedrec-btn{
+    @include mixins.btn(false, vars.$clr-green, vars.$clr-green, vars.$clr-dark);
+   
+
+}
 

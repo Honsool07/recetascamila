@@ -6,7 +6,7 @@ const app = Vue.createApp({
             all_recipes:[],
             hasRecipes: true,
             recipes:[ 
-            {id: 1, image:"./images/recipes/sushi.jpg", name: "", category: "", time: "", level: "", likes: 18, ingredients: "", instructions: ""},],
+            {id: 1, image:"", name: "", category: "", time: "", level: "", likes: "", ingredients: "", instructions: ""},],
             categories:[
             { name: 'Main course' },
             { name: 'Side dish' },
@@ -33,7 +33,7 @@ const app = Vue.createApp({
     
         axios({
             method: 'get',
-            url: 'https://api.spoonacular.com/recipes/complexSearch?type=maincourse&apiKey=3262608b5ca0447299783d90b86cbf50'
+            url: 'https://api.spoonacular.com/recipes/complexSearch?type=name&apiKey=3262608b5ca0447299783d90b86cbf50'
 
         })
         .then(
@@ -91,7 +91,7 @@ const app = Vue.createApp({
                     this.recipe.name = item.title;
                     this.recipe.category = "";
                     this.recipe.time = item.readyInMinutes + " mins";
-                    this.recipe.level = "Easy";
+                    this.recipe.level = "";
                     this.recipe.likes = item.aggregateLikes;
                     this.recipe.instructions = item.instructions;
 
