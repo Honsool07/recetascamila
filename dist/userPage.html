@@ -24,31 +24,7 @@
 
 <body>
     <section id="app" class="container-fluid">
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="sec-title text-left fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}
-                        </h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="d-block m-auto img-fluid" v-bind:src="recipes[selectedIndex].image"
-                            alt="{{ recipes[selectedIndex].name }}">
-                        <p class="text-center ingredients f-6">{{ recipes[selectedIndex].ingredients }}</p>
-                        <p class="instructions fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickPrev()">Prev</button>
-                        <button type="button" class="btn recipecrd-btn" v-on:click="onClickNext()">Next</button>
-                        <button type="button" class="btn unlike-btn" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
+       
 
 
 
@@ -173,7 +149,7 @@
             </ul>
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
 
-                <div v-for="(item, index) in recipes" class="col-md-3">
+               <!-- <div v-for="(item, index) in recipes" class="col-md-3">
                     <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
                         <img v-bind:src="item.image" class="card-img rounded float-start" alt="featured recipe">
                         <div class="card-body p-0">
@@ -190,7 +166,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </section>
         <!--Footer starts-->

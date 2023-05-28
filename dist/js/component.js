@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data(){
         return{
+            pruebaArray:[],
             title: "KookBook Recipes!",
             description: "Everyones favorites recipes for anytime in the day",
             image: "./imgs/headerpic.png",
@@ -31,6 +32,7 @@ const app = Vue.createApp({
         }
     },
     mounted:function(){
+        
         this.all_recipes = this.recipes;
 
     
@@ -69,12 +71,7 @@ const app = Vue.createApp({
         );
     },
     methods: {
-        onClickRecipeLike(index){
-            this.recipes[index].likes +=1;
-        },
-        onClickRecipeUnlike(index){
-            if(this.recipes[index].likes > 0)this.recipes[index].likes -= 1;
-        },
+       
         onClickRecipeDetails(index){
             console.log("recipe id - " + index);
             //this.selectedIndex = index;
@@ -112,6 +109,49 @@ const app = Vue.createApp({
                 error => console.log(error)
             );
         },
+        searchRecipe(){
+
+            const searchTerm = this.$refs.searchInput.value;
+    
+            
+            axios({
+                method: 'get',
+                url: `https://api.spoonacular.com/recipes/complexSearch?query=${searchTerm}&apiKey=3262608b5ca0447299783d90b86cbf50`
+              })
+
+            .then(
+                (response) => {
+                    let items = response.data.results;
+                    console.log(items);
+
+                    items.forEach ((element) =>  {
+                        this.pruebaArray.push({
+                            id:element.id,
+                            image: element.image,
+                            name: element.title,
+                            preparation_time: element.preparationMinutes + "mins",
+                            cook_time: element.cookingMinutes + " mins",
+                            total_time: element.readyInMinutes + " mins",
+                            category: element.dishTypes,
+                            portions: element.servings,
+                            level: "Easy",
+                            occasion: element.occasions,
+                            likes: element.aggregateLikes, 
+                            description: element.summary,
+                            ingredients: element.extendedIngredients, 
+                            instructions: element.instructions,
+                        })
+
+
+
+                    });
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+        },
+
         onClickSelectedCategory(category){
           
             axios({

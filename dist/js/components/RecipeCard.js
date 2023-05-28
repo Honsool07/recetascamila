@@ -25,7 +25,7 @@ app.component('recipe-card',{
         },
         likes:{
             type: Number,
-            default: 1
+            default: 0
         },
         index:{
             type: Number
@@ -35,14 +35,7 @@ app.component('recipe-card',{
         this.recipe_likes = this.likes;
     },
     methods:{
-        onClickLike(){
-            console.log("LIKE");
-            this.$emit('recipelike', this.index);
-        },
-        onClickUnlike(){
-            console.log("UNLIKE");
-            this.$emit('recipeunlike', this.index);
-        },
+       
         onClickViewRecipe(){
             console.log("VIEW");
             this.$emit('recipedetails', this.index);
@@ -56,6 +49,7 @@ app.component('recipe-card',{
             <div class="card-body p-0">
                 <p class="mt-2 ms-2 badge bg-secondary">{{ category }}</p><a
                     href="userPage.html">
+                    
                     <i class="m-guardar fa-solid fa-bookmark fa-lg"></i>
                 </a>
     
@@ -64,8 +58,8 @@ app.component('recipe-card',{
                 <p class="ms-2 data-card">{{ time }}</p>
                 <p class="ms-2 data-card">{{ level }}</p>
                 <p class="ms-2 data-card">{{ likes }}</p>
-                <button v-on:click="onClickLike()"  class="btn like-btn">Like</button>
-                <button v-on:click="onClickUnlike()" class="btn unlike-btn">Unlike</button>
+                <button  class="btn like-btn">Like</button>
+                <button  class="btn unlike-btn">Unlike</button>
                 <button v-on:click="onClickViewRecipe()" class="btn recipecrd-btn" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Ver Receta</button>
     

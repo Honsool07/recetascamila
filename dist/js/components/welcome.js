@@ -23,7 +23,7 @@ app.component('welcome', {
     template:
         /*html*/
         `
-    <h2 class= "text-center subtitle" > {{ title }} <h2>
+    <h2 class= "text-center subtitle" > {{ title }} </h2>
     <p class="text-center text ">{{ description }} </p>
 
 

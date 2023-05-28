@@ -24,18 +24,6 @@ const app = Vue.createApp({
         this.all_recipes = this.recipes;
     },
     methods: {
-        onClickLike(index) {
-            //console.log("btn - click");
-            //this.likes += 1;
-            //console.log("INDEX -> "+ index)
-            this.recipes[index].likes += 1;
-        },
-        onClickUnlike(index) {
-            //console.log("btn - click");
-            //if(this.likes > 0)this.likes -= 1;
-            if (this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
-
-        },
         onClickCategory(category) {
             console.log("category -> " + category);
             if (category == "Todas") {
