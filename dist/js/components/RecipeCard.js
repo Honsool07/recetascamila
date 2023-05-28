@@ -32,14 +32,34 @@ app.component('recipe-card',{
         }
     },
     mounted(){
-        this.recipe_likes = this.likes;
+      this.$test.on('foo', function(data){
+        console.log(data)
+      })  
+    },
+    data() {
+        return {
+          localLikes: 0,
+        };
+        
     },
     methods:{
        
         onClickViewRecipe(){
             console.log("VIEW");
             this.$emit('recipedetails', this.index);
-        }
+        },
+
+        onClickRecipeLike(){
+            
+            this.localLikes += 1;
+            //this.$emit(recipelike, this.index);
+        },
+
+        onClickRecipeUnlike(){
+            
+            this.localLikes -= 1;
+            //this.$emit(recipelike, this.index);
+        },
     },
     template:
     /*html*/
@@ -54,12 +74,11 @@ app.component('recipe-card',{
                 </a>
     
                 <h5 class="ms-2 card-title">{{ name }}</h5>
-                <p class="card-text">{{ description }}</p>
                 <p class="ms-2 data-card">{{ time }}</p>
-                <p class="ms-2 data-card">{{ level }}</p>
-                <p class="ms-2 data-card">{{ likes }}</p>
-                <button  class="btn like-btn">Like</button>
-                <button  class="btn unlike-btn">Unlike</button>
+                <p class="ms-2 data-card">{{ Easy }}</p>
+                <p class="ms-2 data-card">{{ localLikes }}</p>
+                <button  class="btn like-btn" v-on:click="onClickRecipeLike()" >Like</button>
+                <button  class="btn unlike-btn"  v-on:click="onClickRecipeUnlike()">Unlike</button>
                 <button v-on:click="onClickViewRecipe()" class="btn recipecrd-btn" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Ver Receta</button>
     

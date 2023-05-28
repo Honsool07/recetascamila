@@ -16,10 +16,6 @@ app.component('welcome', {
     },
 
 
-
-
-
-
     template:
         /*html*/
         `

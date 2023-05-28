@@ -89,10 +89,11 @@ const app = Vue.createApp({
                     this.recipe.id = index;
                     this.recipe.image = item.image;
                     this.recipe.name = item.title;
-                    this.recipe.category = "";
+                    this.recipe.category = item.category;
                     //this.recipe.time = item.readyInMinutes + " mins";
                     this.recipe.cookingMinutes = item.cookingMinutes;
                     this.recipe.preparationMinutes = item.preparationMinutes;
+                    this.recipe.readyMinutes= item.readyMinutes;
                     this.recipe.level = "";
                     this.recipe.likes = item.aggregateLikes;
                     this.recipe.instructions = item.instructions;
@@ -174,7 +175,7 @@ const app = Vue.createApp({
                              id: element.id,
                              image: element.image,
                              name: element.title,
-                             category: category,
+                             category: element.category,
                              time: "20 mins",
                              level: "Easy",
                              likes: 18,

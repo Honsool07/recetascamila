@@ -18,6 +18,9 @@ app.component('recipe-details', {
         cooktime: {
             type: Number
         },
+        readyMinutes: {
+            type: Number
+        },
     },
     mounted() {
         this.$test.on('foo', function (data) {
@@ -49,6 +52,7 @@ app.component('recipe-details', {
                         <img class="d-block m-auto img-fluid" v-bind:src="image" alt="{{ name }}">
                         <p class="text-center f-6"> Preparation time: {{ preptime }} minutes</p>
                         <p class="text-center f-6">Cook Time: {{ cooktime }} minutes</p>
+                        <p class="text-center f-6">Ready Minutes: {{ totaltime }} minutes</p>
                         <p class="text-center f-6">{{ ingredients }}</p>
                         <p class="fst-italic fw-light fs-5">{{ instructions }}</p>
                     </div>

@@ -143,16 +143,7 @@
             </header>
         </section>
         <!--Header ends-->
-        <div class="wrap">
-
-            <form class="searchTerm" role="search" @submit.prevent="searchRecipe">
-                <input ref="searchInput" class="" type="search" placeholder="what are you looking for"
-                    aria-label="Search">
-                <button class="searchButton" type="submit"><i class="fa fa-search"></i></button>
-            </form>
-
-
-        </div>
+        
 
 
 
@@ -166,6 +157,8 @@
         <div class="row">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
+                    
+                        <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li v-for="(category, index) in categories" class="nav-item">
@@ -175,6 +168,7 @@
                     </ul>
 
                 </div>
+            </div>
             </nav>
         </div>
 
@@ -182,19 +176,21 @@
 
 
             <section class="  container">
-                <div class="wrap">
-                    <div class="search">
-                       <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                       <button type="submit" class="searchButton">
-                         <i class="fa fa-search"></i>
-                      </button>
-                    </div>
-                 </div>
-
-
+                
                 <div class=" mt-5 sec-title text-left">
 
-                    <h2>Resultados recetas buscadas</h2>
+                    <h2>Buscar Recetas</h2>
+                    <form class="row g-3" role="search" @submit.prevent="searchRecipe">
+                        
+                        <div class="col-auto">
+                          <input ref="searchInput" type="search" class="form-control" placeholder="Search...">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary mb-3" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                      </form>  
+                       
+                    
 
                 </div>
                 <div class="container">
