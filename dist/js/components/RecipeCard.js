@@ -17,11 +17,11 @@ app.component('recipe-card',{
         },
         time:{
             type: String,
-            default: "default time"
+            default: "20 min"
         },
         level:{
             type: String,
-            default: "default level"
+            default: "Easy"
         },
         likes:{
             type: Number,
@@ -75,7 +75,7 @@ app.component('recipe-card',{
     
                 <h5 class="ms-2 card-title">{{ name }}</h5>
                 <p class="ms-2 data-card">{{ time }}</p>
-                <p class="ms-2 data-card">{{ Easy }}</p>
+                <p class="ms-2 data-card">{{ level }}</p>
                 <p class="ms-2 data-card">{{ localLikes }}</p>
                 <button  class="btn like-btn" v-on:click="onClickRecipeLike()" >Like</button>
                 <button  class="btn unlike-btn"  v-on:click="onClickRecipeUnlike()">Unlike</button>
