@@ -14,18 +14,22 @@
         rel="stylesheet">
     <!--Icon Line-->
     <script src="https://kit.fontawesome.com/f664eca71c.js" crossorigin="anonymous"></script>
-    bootstrap.bundle.min.js
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
     <link rel="stylesheet" href="./css/main.css">
-    <title>User Page</title>
+    <title>Pagina Principal</title>
 </head>
 
 <body>
+
     <section id="app" class="container-fluid">
+
+
+
 
 
         <section class="container">
@@ -106,7 +110,7 @@
 
                                 <li class="list-inline-item ">
                                     <a href="#"><i class="fa-solid fa-magnifying-glass  m-2 "></i></a>
-                                    <a href="#"><i class="fa-solid fa-user fa-2xl m-2"></i></a>
+                                    <a href="userPage.html"><i class="fa-solid fa-user fa-2xl m-2"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -120,97 +124,41 @@
 
         <!--Navbar ends-->
 
-        <section class="container">
-            <section class="container-sm square">
-                <div class="text-center m-4">
-                    <img src="./imgs/person.png" class=" m-4 rounded img-fluid " style=height:200px;"...">
-                    <h5 class="ms-2 user-text">Nombre de usuario:</h5>
-                    <table class="table-dark">Honsool</table>
-                    <h5 class="ms-2 user-text">E-mail:</h5>
-                    <table class="table-dark">c.amila2013mn@gmail.com</table>
 
 
-                </div>
+        <div class=" mt-5 sec-title text-left">
 
-
-
-            </section>
-
-            <section class="  container">
-
-                <div class=" mt-5 sec-title text-left">
-
-                    <h2>Buscar Recetas</h2>
-                    <form class="row g-3" role="search" @submit.prevent="searchRecipe">
-
-                        <div class="col-auto">
-                            <input ref="searchInput" type="search" class="form-control" placeholder="Search...">
-                        </div>
-                        <div class="col-auto">
-                            <button class="btn btn-primary mb-3" type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
-
-
-
-                </div>
-                <div class="container">
-                    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
-
-
-                        <div v-for="(item, index) in pruebaArray" class="col-md-3">
-
-                            <recipe-details :name="recipe.name" :image="recipe.image"
-                                :instructions="recipe.instructions" :ingredients="recipe.ingredients"
-                                :cooktime="recipe.cookingMinutes" :preptime="recipe.preparationMinutes"
-                                v-on:prevrecipe="onClickPrev" v-on:nextrecipe="onClickNext"></recipe-details>
-
-                            <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                                :description="item.instructions" :level="item.level" :likes="item.likes"
-                                :index="item.id" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-
-
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-            <div class=" mt-5 sec-title text-left">
-
-                <h2>Recetas Guardadas</h2>
+            <h2>Recetas Guardadas</h2>
 
 
 
 
-            </div>
-            <div class="container">
-                <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
-                    <recipe-details :name="recipe.name" :image="recipe.image" :instructions="recipe.instructions"
-                        :ingredients="recipe.ingredients" :cooktime="recipe.cookingMinutes"
-                        :preptime="recipe.preparationMinutes"></recipe-details>
+        </div>
+        <div class="container">
+            <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
 
 
-                    <div v-for="(item, index) in colectedRecipes" class="col-md-3">
-                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                            :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id"
-                            v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                <div v-for="(item, index) in collectRecipes" class="col-md-3">
+                    <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                        :description="item.instructions" :level="item.level" :likes="item.likes" :index="item.id"
+                        v-on:recipedetails="onClickRecipeDetails"></recipe-card>
 
 
-                    </div>
                 </div>
             </div>
+        </div>
 
-            
-        </section>
-         <!--Footer starts-->
+
+
+    <!--Footer starts-->
     <section class="container-fluid p-0">
        
         <footer-recipes></footer-recipes>
 
         <!--Footer ends-->
     </section>
-    </section>
+
+</section>
 
 
 
@@ -226,7 +174,7 @@
     <!-- custom events - components -->
 
     <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
-
+    
 
     <!-- AXIOS Script -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -238,7 +186,7 @@
     <script src="./js/components/RecipeCategoryButton.js"></script>
     <script src="./js/components/RecipeDetails.js"></script>
     <script src="./js/components/welcome.js"></script>
-    <script src="./js/components/footerRecipes.js"></script>
+    <script src="./js/components/footerRecipes.js" ></script>
 
 
 

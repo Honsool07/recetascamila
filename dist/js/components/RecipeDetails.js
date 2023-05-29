@@ -28,15 +28,7 @@ app.component('recipe-details', {
         });
     },
     methods: {
-        onClickPrev() {
-            console.log("PREV");
-            this.$emit('prevrecipe', this.index);
-
-        },
-        onClickNext() {
-            console.log("NEXT");
-            this.$emit('nextrecipe', this.index);
-        }
+        
     },
     template:
         /*html*/
@@ -57,8 +49,7 @@ app.component('recipe-details', {
                         <p class="fst-italic fw-light fs-5">{{ instructions }}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickPrev()" >Prev</button>
-                        <button type="button" class="btn btn-secondary" v-on:click="onClickNext()" >Next</button>
+
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>

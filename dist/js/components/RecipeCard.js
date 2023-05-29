@@ -39,10 +39,16 @@ app.component('recipe-card',{
     data() {
         return {
           localLikes: 0,
+          
         };
         
     },
     methods:{
+
+        onClickSaveRecipe(){
+            console.log("VIEW");
+            this.$emit('saverecipes', this.index);
+        },
        
         onClickViewRecipe(){
             console.log("VIEW");
@@ -67,16 +73,18 @@ app.component('recipe-card',{
         <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
             <img v-bind:src="image" class="card-img rounded float-start" alt="featured recipe">
             <div class="card-body p-0">
-                <p class="mt-2 ms-2 badge bg-secondary">{{ category }}</p><a
-                    href="userPage.html">
-                    
-                    <i class="m-guardar fa-solid fa-bookmark fa-lg"></i>
-                </a>
+                <p class="mt-2 ms-2 badge bg-secondary">{{ category }}</p>
+               
+                <button  class="btn like-btn" v-on:click="onClickSaveRecipe()">Guardar</button>
+                
     
                 <h5 class="ms-2 card-title">{{ name }}</h5>
                 <p class="ms-2 data-card">{{ time }}</p>
                 <p class="ms-2 data-card">{{ level }}</p>
                 <p class="ms-2 data-card">{{ localLikes }}</p>
+
+               
+
                 <button  class="btn like-btn" v-on:click="onClickRecipeLike()" >Like</button>
                 <button  class="btn unlike-btn"  v-on:click="onClickRecipeUnlike()">Unlike</button>
                 <button v-on:click="onClickViewRecipe()" class="btn recipecrd-btn" data-bs-toggle="modal"
@@ -87,3 +95,5 @@ app.component('recipe-card',{
         </div>
    `
 })
+
+
