@@ -164,4 +164,13 @@
 	cursor: pointer;
 	font-size: 20px;
   }
+
+  .btn-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  }
+  .btn-container .btn {
+	margin: 5px;
+  }
   

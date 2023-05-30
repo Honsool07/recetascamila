@@ -25,44 +25,10 @@
 
     <body style="background-color: #212529;">
         <section class="container-fluid m-4">
-            <div class='bold-line'></div>
-            <div class='container-log'>
-                <div class='window'>
 
-                    <div class='content-log'>
-                        <div class='welcome'>Hola!</div>
-                        <div class='sub-login'>
-                            Digita tus datos personales y empieza a explorar tus recetas favoritas!
-                        </div>
-                        <div class='input-fields'>
-                            <input type='text' placeholder='Username' class='input-line full-width'></input>
-
-                            <input type='password' placeholder='Password' class='input-line full-width'></input>
-                            <a class="account-txt ms-0 mb-4 mt-2 link-info"
-                                style="text-decoration: underline;color: #4400ff" href="forgotpassword.html">Olvidaste
-                                tu
-                                contrasena?</a>
-
-
-                        </div>
-
-                        <div class="position-absolute top-50 start-50 translate-middle-x p-4">
-
-
-                        </div>
-                        <div class="bottom-0 p-4 text-center">
-                            <a class="ms-0 login-btn full-width " href="index.html">Iniciar Sesion</a>
-                            <p class="account-txt m-0 mt-5"
-                                style="color:white;text-decoration: underline;color: #ffffff">
-                                ¿Aun no tienes una cuenta? </p>
-                            <a class="account-txt recipecrd-btn  text-md-left login-btn" href="signUp.html">Crear Cuenta
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <login-recipes></login-recipes>
         </section>
+
         <!--Footer starts-->
         <section class="container-fluid p-0">
 
@@ -89,8 +55,23 @@
 
 <!-- VueJS -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<!-- custom events - components -->
+
+<script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+
+
+<!-- AXIOS Script -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <!-- main script -->
-<script src="./js/main.js"></script>
+<script src="./js/component.js"></script>
+
+
+<script src="./js/components/footerRecipes.js"></script>
+
+<script src="./js/components/loginRecipes.js" ></script>
+
 <!-- mounted -->
 <script>
     const mountedApp = app.mount("#app");
