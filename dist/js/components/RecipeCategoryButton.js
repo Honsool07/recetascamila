@@ -18,10 +18,10 @@ app.component('recipe-category-button',{
     template:
     /*html*/
     
-    `<div class="container">
+    `
     
-    <button type="button" class="btn btn-primary" v-on:click="onClickCategoryButton">{{ name }}</button>
+    <button type="button" class="btn filter-button filter-style"  v-on:click="onClickCategoryButton">{{ name }}</button>
     
     
-    </div>`
+    `
 })

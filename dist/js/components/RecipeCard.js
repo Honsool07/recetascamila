@@ -73,7 +73,7 @@ app.component('recipe-card',{
         <div class='card-row card shadow p-0.5 mb-5 bg-body rounded'>
             <img v-bind:src="image" class="card-img rounded float-start" alt="featured recipe">
             <div class="card-body p-0">
-                <p class="mt-2 ms-2 badge bg-secondary">{{ category }}</p>
+               
                
                 <button  class="btn like-btn" v-on:click="onClickSaveRecipe()">Guardar</button>
                 

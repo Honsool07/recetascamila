@@ -165,12 +165,20 @@
 	font-size: 20px;
   }
 
-  .btn-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+  .filter-button {
+	@include mixins.btn(false, vars.$clr-dark, vars.$clr-dark, vars.$clr-white);
+	
+	cursor: pointer;
+	text-align: center;
+	font-size: 15px;
+	align-items: center;
+
+	@include media-queries.respond-to (media-queries.$phone){
+        font-size:10px;
+       margin-bottom: 5px;
+       
+       
+        }
   }
-  .btn-container .btn {
-	margin: 5px;
-  }
-  
+
+
